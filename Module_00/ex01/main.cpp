@@ -6,7 +6,7 @@
 /*   By: shachowd <shachowd@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/15 10:17:57 by shachowd          #+#    #+#             */
-/*   Updated: 2025/05/15 13:54:34 by shachowd         ###   ########.fr       */
+/*   Updated: 2025/05/15 16:45:08 by shachowd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,10 +28,10 @@ int main(void)
 			phonebook.displayList();
 		else if (action == "EXIT") // exit the program
 			break ;
-		else if (std::cin.eof()) // exit or what ??
-			break ;
-		else
+		else if (!std::cin.eof()) // exit or what ??
 			std::cout << "Wrong action: only (ADD, SEARCH, EXIT) are allowed" << std::endl << std::endl;
+		// else
+		// 	std::cout << "Wrong action: only (ADD, SEARCH, EXIT) are allowed" << std::endl << std::endl;
 	}
 	return (0);
 }

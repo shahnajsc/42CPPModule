@@ -13,7 +13,8 @@ class Contact
 				std::string nickName, std::string phoneNumber,
 				std::string darkSecret);
 		// other function
-		void displayContact(void);
+		void displayList(void);
+		void displayContact(int index);
 		~Contact();
 
 	private:
