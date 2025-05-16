@@ -1,8 +1,8 @@
 NAME		= phonebook
 CC			= c++
-CFLAGS		= -Wall -Wextra -Werror -std=c++98 
+CFLAGS		= -Wall -Wextra -Werror -std=c++98
 
-SRCS		= main.cpp contact.cpp phonebook.cpp
+SRCS		= main.cpp Contact.cpp phonebook.cpp
 OBJS		= $(SRCS:.cpp=.o)
 
 RM			= rm -rf

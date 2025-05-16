@@ -6,27 +6,27 @@
 /*   By: shachowd <shachowd@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/13 16:24:07 by shachowd          #+#    #+#             */
-/*   Updated: 2025/05/15 15:38:03 by shachowd         ###   ########.fr       */
+/*   Updated: 2025/05/16 13:07:24 by shachowd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PHONEBOOK_HPP
 # define PHONEBOOK_HPP
 
-#include "contact.hpp"
+#include "Contact.hpp"
 
 class PhoneBook
 {
 	public:
 		PhoneBook();
 		// other function
-		void addContact();
-		void displayList();
-		//void displayContact(int index);
+		void addContact(void);
+		void searchContactList(void);
+		void displayList(void);
 		~PhoneBook();
 
 	private:
-		Contact contacts;
+		Contact contacts[8];
 		int count;
 };
 
