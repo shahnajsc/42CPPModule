@@ -6,11 +6,11 @@
 /*   By: shachowd <shachowd@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/15 10:17:57 by shachowd          #+#    #+#             */
-/*   Updated: 2025/05/16 14:51:36 by shachowd         ###   ########.fr       */
+/*   Updated: 2025/05/18 12:16:12 by shachowd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "phonebook.hpp"
+#include "PhoneBook.hpp"
 
 int main(void)
 {
