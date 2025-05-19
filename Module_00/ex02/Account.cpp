@@ -6,56 +6,44 @@
 /*   By: shachowd <shachowd@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/18 12:29:24 by shachowd          #+#    #+#             */
-/*   Updated: 2025/05/18 12:53:46 by shachowd         ###   ########.fr       */
+/*   Updated: 2025/05/19 12:33:32 by shachowd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Account.hpp"
-
-Account::Account(int initial_deposit)
-{
-}
-
-Account::~Account()
-{
-}
-
-static int	getNbAccounts(void)
-{
-
-}
-
-static int	getTotalAmount(void)
-{
-
-}
-
-static int	getNbDeposits(void)
-{
-
-}
-
-static int	getNbWithdrawals(void)
-{
-
-}
-
-static void	displayAccountsInfos(void)
-{
-
-}
-
-#include "Account.hpp"
 #include <iostream>
 #include <ctime>
+#include "Account.hpp"
 
+
+// Static Variable initialization
 int	Account::_nbAccounts = 0;
 int	Account::_totalAmount = 0;
 int	Account::_totalNbDeposits = 0;
 int	Account::_totalNbWithdrawals = 0;
 
-// Constructor
-// Initializes an account with an initial deposit.
+// Get private variables
+int	Account::getNbAccounts(void)
+{
+	return (_nbAccounts);
+}
+
+int	Account::getTotalAmount(void)
+{
+	return (_totalAmount);
+}
+
+int	Account::getNbDeposits(void)
+{
+	return (_totalNbDeposits);
+}
+
+int	Account::getNbWithdrawals(void)
+{
+	return (_totalNbWithdrawals);
+}
+
+// Constructor : 1. Default 2.With parameter for account deposit
+
 Account::Account(int initial_deposit) {
 	_displayTimestamp();
 	_accountIndex = _nbAccounts;
@@ -70,33 +58,16 @@ Account::Account(int initial_deposit) {
 }
 
 // Destructor
-// Called when an Account object is destroyed.
-// This cleans up any resources if needed.
-Account::~Account(void) {
+Account::~Account() {
 	_displayTimestamp();
 	std::cout << "index:" << _accountIndex;
 	std::cout << ";amount:" << _amount;
 	std::cout << ";closed" << std::endl;
-	return ;
 }
 
-// Static functions that operates on static member variables.
-// They do not have access to non-static member variables.
-int	Account::getNbAccounts(void) {
-	return (_nbAccounts);
-}
 
-int	Account::getTotalAmount(void) {
-	return (_totalAmount);
-}
-
-int	Account::getNbDeposits(void) {
-	return (_totalNbDeposits);
-}
-
-int	Account::getNbWithdrawals(void) {
-	return (_totalNbWithdrawals);
-}
+/* Static functions to get the data and display from static variables,
+ which doesn't have access to non-static variables. */
 
 void	Account::displayAccountsInfos(void) {
 	_displayTimestamp();
@@ -106,9 +77,9 @@ void	Account::displayAccountsInfos(void) {
 	std::cout << ";withdrawals:" << _totalNbWithdrawals << std::endl;
 }
 
-// Member functions
-// These functions operate on individual instances of the class (i.e., on a specific Account object).
-// They can access both static and non-static member variables.
+/* Functions: operates on Account object, can access both static
+ and non-static member variables */
+
 void	Account::makeDeposit(int deposit) {
 	_displayTimestamp();
 	std::cout << "index:" << _accountIndex;
@@ -155,7 +126,7 @@ void	Account::displayStatus(void) const {
 	std::cout << ";withdrawals:" << _nbWithdrawals << std::endl;
 }
 
-// Private member function to display the current timestamp
+// Function to display the current timestamp
 void	Account::_displayTimestamp(void) {
     char result[18];
 
@@ -164,4 +135,7 @@ void	Account::_displayTimestamp(void) {
     std::cout << "[" << result << "] ";
 }
 
-Account::Account(void) {}
+
+Account::Account(void)
+{
+}
