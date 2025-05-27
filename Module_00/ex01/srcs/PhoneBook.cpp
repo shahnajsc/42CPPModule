@@ -6,7 +6,7 @@
 /*   By: shachowd <shachowd@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/13 16:24:18 by shachowd          #+#    #+#             */
-/*   Updated: 2025/05/18 12:15:49 by shachowd         ###   ########.fr       */
+/*   Updated: 2025/05/27 17:26:37 by shachowd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ bool isWhiteSpace(std::string data)
 {
 	if (data.empty())
 		return (1);
-	int i;
+	std::string::size_type i;
 	for (i = 0; i < data.size(); i++)
 	{
 		if (data[i] == ' ')
@@ -37,8 +37,8 @@ bool isValidPhoneNumber(std::string data)
 {
 	if (data.empty())
 		return (0);
-	int i;
-	int j = 0;
+	std::string::size_type i;
+	std::string::size_type j = 0;
 	if (data[0] == '+')
 		j = 1;
 	for (i = j; i < data.size(); i++)

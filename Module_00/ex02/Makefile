@@ -1,66 +1,40 @@
-NAME        =    dreamjob
+NAME		= account
+CC			= c++
+CFLAGS		= -Wall -Wextra -Werror -std=c++98
 
-SRC_PATH    =    ./srcs
-HEADER_PATH    =    ./includes
+INCLUDE		= -I./includes
+OBJ_DIR		= ./objects
+SRCS_DIR 	= ./srcs
+SRCS_FILES 	= tests.cpp Account.cpp
 
-SRC         =    Account.cpp tests.cpp \
+SRCS		= $(addprefix ($(SRCS_DIR))/, $(SRCS_FILES))
+OBJS		= $(addprefix $(OBJ_DIR)/,  $(SRCS_FILES:.cpp=.o))
 
-SRC_FILES    =    $(addprefix $(SRC_PATH)/,$(SRC))
-
-CC            =    c++
-CFLAGS        =    -Wall -Wextra -Werror -std=c++98 -I$(HEADER_PATH)
-RM            =    rm -rf
-
-OBJ_PATH    =    ./objects/
-OBJ         =    $(addprefix $(OBJ_PATH), $(notdir $(SRC_FILES:.cpp=.o)))
+RM			= rm -rf
 
 all: $(NAME)
 
-$(OBJ_PATH)%.o: $(SRC_PATH)/%.cpp
-		@mkdir -p $(OBJ_PATH)
-		$(CC) $(CFLAGS) -c $< -o $@
+# Compile rule
+$(OBJ_DIR)/%.o: $(SRCS_DIR)/%.cpp
+	@mkdir -p $(OBJ_DIR)
+	$(CC) $(CFLAGS) $(INCLUDE) -c $< -o $@
 
-$(NAME): $(OBJ)
-		$(CC) $(CFLAGS) $(OBJ) -o $(NAME)
-		@echo "$(SWAP)[✔] Build complete! Run './$(NAME)'.$(RESET)"
+# Linking rule
+$(NAME): $(OBJS)
+	$(CC) $(CFLAGS) $(INCLUDE) $(OBJS) -o $(NAME)
 
 clean:
-		@$(RM) $(OBJ) $(OBJ_PATH)
-		@echo "$(SWAP)[✔] Objects files removed.$(RESET)"
+	@$(RM) $(OBJS) $(OBJ_DIR)
+	@echo "$(RED)Object files removed.....$(RESET)"
 
 fclean: clean
-		@$(RM) $(NAME)
-		@echo "$(SWAP)[✔] Executable '$(NAME)' removed.$(RESET)"
+	@$(RM) $(NAME)
+	@echo "$(RED)Executable removed.....$(RESET)"
 
 re: fclean all
 
-# Colors
-SWAP    =\033[7m
-RESET    =\e[0m
+# color
+RED		= \033[0;31m
+RESET		= \033[0;36m
 
-# NAME		= account
-# CC			= c++
-# CFLAGS		= -Wall -Wextra -Werror -std=c++20
-
-# SRCS		= ./srcs/tests.cpp ./srcs/Account.cpp \
-# OBJS		= $(SRCS:.cpp=.o)
-
-# RM			= rm -rf
-
-# all: $(NAME)
-
-# $(SRCS)%.o: $(OBJS)%.cpp
-# 	$(CC) $(CFLAGS) -c $< -o $@
-
-# $(NAME): $(OBJS)
-# 	$(CC) $(CFLAGS) $(OBJS) -o $(NAME)
-
-# clean:
-# 	$(RM) $(OBJS)
-
-# fclean: clean
-# 	$(RM) $(NAME)
-
-# re: fclean all
-
-# .PHONY: all clean fclean re
+.PHONY: all clean fclean re

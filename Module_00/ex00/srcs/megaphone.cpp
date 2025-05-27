@@ -6,7 +6,7 @@
 /*   By: shachowd <shachowd@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/13 15:29:54 by shachowd          #+#    #+#             */
-/*   Updated: 2025/05/13 16:21:09 by shachowd         ###   ########.fr       */
+/*   Updated: 2025/05/27 17:23:27 by shachowd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,8 +30,7 @@ int main(int argc, char **argv)
 			str += " ";
 		str += argv[i];
 	}
-	i = 0;
-	for (i = 0; i <str.length(); i++)
+	for (std::string::size_type i = 0; i <str.length(); i++)
 	{
 		str[i] = std::toupper(str[i]);
 	}
