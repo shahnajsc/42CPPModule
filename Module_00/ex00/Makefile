@@ -4,7 +4,7 @@ CFLAGS		= -Wall -Wextra -Werror -std=c++98
 
 OBJ_DIR		= ./objects
 SRCS_DIR 	= ./srcs
-SRCS_FILES 	= megaphone.cpp
+SRCS_FILES 	= MegaPhone.cpp
 
 SRCS		= $(addprefix ($(SRCS_DIR))/, $(SRCS_FILES))
 OBJS		= $(addprefix $(OBJ_DIR)/,  $(SRCS_FILES:.cpp=.o))
@@ -13,12 +13,10 @@ RM			= rm -rf
 
 all: $(NAME)
 
-# Compile rule
 $(OBJ_DIR)/%.o: $(SRCS_DIR)/%.cpp
 	@mkdir -p $(OBJ_DIR)
 	$(CC) $(CFLAGS) -c $< -o $@
 
-# Linking rule
 $(NAME): $(OBJS)
 	$(CC) $(CFLAGS) $(OBJS) -o $(NAME)
 

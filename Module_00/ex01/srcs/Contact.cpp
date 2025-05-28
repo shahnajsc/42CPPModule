@@ -6,7 +6,7 @@
 /*   By: shachowd <shachowd@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/15 10:12:39 by shachowd          #+#    #+#             */
-/*   Updated: 2025/05/16 14:36:22 by shachowd         ###   ########.fr       */
+/*   Updated: 2025/05/28 11:43:02 by shachowd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,9 @@ Contact::Contact()
 {
 }
 
-Contact::Contact(	std:: string fisrtName, std::string lastName,
-					std::string nickName, std::string phoneNumber,
-					std::string darkSecret)
+Contact::Contact(	const std:: string &fisrtName, const std::string &lastName,
+					const std::string &nickName, const std::string &phoneNumber,
+					const std::string &darkSecret)
 {
 	this ->fisrt_name = fisrtName;
 	this ->last_name = lastName;
@@ -27,7 +27,7 @@ Contact::Contact(	std:: string fisrtName, std::string lastName,
 	this ->d_secret = darkSecret;
 }
 
-std::string trunccateData(std::string data)
+std::string trunccateData(const std::string &data)
 {
 	std::string newString;
 
@@ -39,16 +39,18 @@ std::string trunccateData(std::string data)
 	return (data);
 }
 
-void Contact::getListElement(int index)
+void Contact::getListElement(int index) const
+
 {
 	std::cout << std::setw(10) << index + 1 << "|";
-	std::cout << std::setw(10) << trunccateData(this->fisrt_name) << "|"; // need to truncate
+	std::cout << std::setw(10) << trunccateData(this->fisrt_name) << "|";
 	std::cout << std::setw(10) << trunccateData(this->last_name) << "|";
 	std::cout << std::setw(10) << trunccateData(this->nickname) << "|";
 	std::cout << std::endl;
+	std::cout << std::endl;
 }
 
-void Contact::getContactDetails(void)
+void Contact::getContactDetails(void) const
 {
 	std::cout << "First Name: " << this ->fisrt_name << std::endl;
 	std::cout << "Last Name: " << this ->last_name << std::endl;

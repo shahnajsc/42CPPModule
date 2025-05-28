@@ -6,7 +6,7 @@
 /*   By: shachowd <shachowd@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/13 16:24:18 by shachowd          #+#    #+#             */
-/*   Updated: 2025/05/27 17:26:37 by shachowd         ###   ########.fr       */
+/*   Updated: 2025/05/28 11:27:11 by shachowd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ PhoneBook::~PhoneBook()
 {
 }
 
-bool isWhiteSpace(std::string data)
+bool isWhiteSpace(const std::string &data)
 {
 	if (data.empty())
 		return (1);
@@ -33,7 +33,7 @@ bool isWhiteSpace(std::string data)
 	return (0);
 }
 
-bool isValidPhoneNumber(std::string data)
+bool isValidPhoneNumber(const std::string &data)
 {
 	if (data.empty())
 		return (0);
@@ -49,7 +49,7 @@ bool isValidPhoneNumber(std::string data)
 	return (1);
 }
 
-std::string getContactData(std::string msg, int type)
+std::string getContactData(const std::string &msg, int type)
 {
 	std::string data;
 
@@ -99,7 +99,8 @@ void PhoneBook::addContact(void)
 	if (!std::cin.eof())
 		std::cout << "Successfully added new contact!" << std::endl;
 }
-void PhoneBook::displayList(void)
+
+void PhoneBook::displayList(void) const
 {
 	std::cout << std::setw(10) << "INDEX" << "|";
 	std::cout << std::setw(10) << "FIRST NAME" << "|";
@@ -112,7 +113,7 @@ void PhoneBook::displayList(void)
 	}
 }
 
-void PhoneBook::searchContactList(void)
+void PhoneBook::searchContactList(void) const
 {
 	if (this->count == 0)
 	{
@@ -127,17 +128,14 @@ void PhoneBook::searchContactList(void)
 
 		if (std::cin.eof())
 			break;
-		// Check: must be one digit between '1' and '8'
 		if (index.size() != 1 || index[0] < '1' || index[0] > '8') {
 			std::cout << "Wrong Index: Try again: " << std::endl;
 			continue;
 		}
-		// Check: must be within the number of saved contacts
 		if (index[0] - '0' > this->count) {
 			std::cout << "No Contact Found. Try Again: " << std::endl;
 			continue;
 		}
-		// Valid index: show contact and exit
 		int i = index[0] - '0' - 1;
 		this->contacts[i].getContactDetails();
 		break;

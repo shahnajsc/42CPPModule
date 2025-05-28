@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   megaphone.cpp                                      :+:      :+:    :+:   */
+/*   MegaPhone.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: shachowd <shachowd@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/13 15:29:54 by shachowd          #+#    #+#             */
-/*   Updated: 2025/05/27 17:23:27 by shachowd         ###   ########.fr       */
+/*   Updated: 2025/05/28 10:09:43 by shachowd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
 #include <string>
-//#include <cctype>     // for std::toupper
+#include <cctype>
 
 int main(int argc, char **argv)
 {
@@ -35,8 +35,5 @@ int main(int argc, char **argv)
 		str[i] = std::toupper(str[i]);
 	}
 	std::cout <<  str << std::endl;
-    return (0);
+	return (0);
 }
-
-// ./a.out "this is cpp 00" "need to Convert TO Upper caSe"
-// c++ -std=c++98 test1.cpp -o megaphone

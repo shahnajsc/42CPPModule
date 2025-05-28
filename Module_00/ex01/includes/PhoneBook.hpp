@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   phonebook.hpp                                      :+:      :+:    :+:   */
+/*   PhoneBook.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: shachowd <shachowd@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/13 16:24:07 by shachowd          #+#    #+#             */
-/*   Updated: 2025/05/19 14:17:44 by shachowd         ###   ########.fr       */
+/*   Updated: 2025/05/28 11:02:56 by shachowd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,10 +19,11 @@ class PhoneBook
 {
 	public:
 		PhoneBook();
-		// other function
+
 		void addContact(void);
-		void searchContactList(void);
-		void displayList(void);
+		void searchContactList(void) const;
+		void displayList(void) const;
+
 		~PhoneBook();
 
 	private:

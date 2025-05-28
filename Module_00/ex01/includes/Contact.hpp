@@ -9,12 +9,13 @@ class Contact
 {
 	public:
 		Contact();
-		Contact(std:: string fisrtName, std::string lastName,
-				std::string nickName, std::string phoneNumber,
-				std::string darkSecret);
-		// other method
-		void getListElement(int index);
-		void getContactDetails(void);
+		Contact(	const std::string &fisrtName, const std::string &lastName,
+					const std::string &nickName, const std::string &phoneNumber,
+					const std::string &darkSecret);
+
+		void getListElement(int index) const;
+		void getContactDetails(void) const;
+
 		~Contact();
 
 	private:

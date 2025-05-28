@@ -6,7 +6,7 @@
 /*   By: shachowd <shachowd@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/18 12:29:24 by shachowd          #+#    #+#             */
-/*   Updated: 2025/05/19 12:33:32 by shachowd         ###   ########.fr       */
+/*   Updated: 2025/05/28 14:47:12 by shachowd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,7 +66,7 @@ Account::~Account() {
 }
 
 
-/* Static functions to get the data and display from static variables,
+/* Displays summary. Static functions to get the data and display from static variables,
  which doesn't have access to non-static variables. */
 
 void	Account::displayAccountsInfos(void) {
@@ -118,6 +118,7 @@ int		Account::checkAmount(void) const {
 	return (_amount);
 }
 
+// Displays accounts information in a list
 void	Account::displayStatus(void) const {
 	_displayTimestamp();
 	std::cout << "index:" << _accountIndex;
