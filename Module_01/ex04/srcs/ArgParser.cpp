@@ -6,7 +6,7 @@
 /*   By: shachowd <shachowd@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/02 16:24:56 by shachowd          #+#    #+#             */
-/*   Updated: 2025/06/02 17:00:40 by shachowd         ###   ########.fr       */
+/*   Updated: 2025/06/03 11:18:06 by shachowd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,15 +36,15 @@ bool ArgParser::isValid() const
 
 const std::string& ArgParser::getFilename() const
 {
-	return (this->filename);
+	return (filename);
 }
 
 const std::string& ArgParser::getS1() const
 {
-	return (this->s1);
+	return (s1);
 }
 
 const std::string& ArgParser::getS2() const
 {
-	return (this->s2);
+	return (s2);
 }

@@ -5,32 +5,22 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: shachowd <shachowd@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/06/02 15:25:16 by shachowd          #+#    #+#             */
-/*   Updated: 2025/06/03 11:13:31 by shachowd         ###   ########.fr       */
+/*   Created: 2025/06/03 13:45:04 by shachowd          #+#    #+#             */
+/*   Updated: 2025/06/03 15:32:40 by shachowd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ArgParser.hpp"
-#include "Replacer.hpp"
+#include "Harl.hpp"
 
-int main(int argc, char **argv)
+int main()
 {
-	if (argc != 4)
-	{
-		std::cout << "Wrong number of parameter." << std::endl;
-		return (1);
-	}
+	Harl harl;
 
-	ArgParser parse(argv[1], argv[2], argv[3]);
-	if (!parse.isValid())
-		return (1);
+	std::cout << "Level: DEBUG" << std::endl;
+	harl.complain("DEBUG");
+		std::cout << "Level: Debug" << std::endl;
+	harl.complain("Debug");
 
-	Replacer replacer(parse.getFilename(), parse.getS1(), parse.getS2());
-	if (!replacer.replaceAll())
-		return (1);
-
-	std::cout << "Replacement complete. Output written to '";
-	std::cout << argv[1] << ".replace'" << std::endl;
-	return (0);
+	std::cout << "Level: INVALID" << std::endl;
+	harl.complain(" ");
 }
-
