@@ -6,7 +6,7 @@
 /*   By: shachowd <shachowd@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/03 13:45:07 by shachowd          #+#    #+#             */
-/*   Updated: 2025/06/04 11:01:41 by shachowd         ###   ########.fr       */
+/*   Updated: 2025/06/04 11:29:28 by shachowd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,8 +55,11 @@ void Harl::complain(std::string level)
         break;
 
     default:
-        std::cout << level;
-        (this->*funcs[index])();
+        for(; index < 4; index++)
+        {
+            std::cout << levels[index];
+            (this->*funcs[index])();
+        }
         break;
     }
 
