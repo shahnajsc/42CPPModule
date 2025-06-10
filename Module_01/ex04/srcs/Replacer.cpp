@@ -6,19 +6,19 @@
 /*   By: shachowd <shachowd@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/02 17:24:52 by shachowd          #+#    #+#             */
-/*   Updated: 2025/06/03 13:39:46 by shachowd         ###   ########.fr       */
+/*   Updated: 2025/06/10 18:04:16 by shachowd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Replacer.hpp"
+#include "../includes/Replacer.hpp"
 
-Replacer::Replacer(	const std::string& filename,
-					const std::string& s1,
-					const std::string& s2 )
+Replacer::Replacer(	const std::string& _filename,
+					const std::string& _s1,
+					const std::string& _s2 )
 {
-	this->_filename = filename;
-	this->_s1 = s1;
-	this->_s2 = s2;
+	this->filenameR = _filename;
+	this->s1R = _s1;
+	this->s2R = _s2;
 }
 
 Replacer::~Replacer()
@@ -44,10 +44,10 @@ std::string Replacer::readContent()
 	std::string line;
 	std::string content;
 
-	std::ifstream file(_filename.c_str());
+	std::ifstream file(filenameR.c_str());
 	if (!file.is_open())
 	{
-		std::cout << "Openning \"" << _filename << "\" is failed" << std::endl;
+		std::cout << "Openning \"" << filenameR << "\" is failed" << std::endl;
 		return ("");
 	}
 
@@ -60,37 +60,37 @@ std::string Replacer::readContent()
 
 	if (file.bad())
 	{
-		std::cout << "Error: Reading failed for file " << _filename << std::endl;
+		std::cout << "Error: Reading failed for file " << filenameR << std::endl;
 		return ("");
 	}
 	file.close();
 	return (content);
 }
 
-std::string Replacer::replaceContent(const std::string& content)
+std::string Replacer::replaceContent(const std::string& _content)
 {
 	std::string result;
 	size_t pos = 0;
 	size_t found;
 
-	while ((found = content.find(_s1, pos)) != std::string::npos) {
-		result.append(content.substr(pos, found - pos));
-		result.append(_s2);
-		pos = found + _s1.length();
+	while ((found = _content.find(s1R, pos)) != std::string::npos) {
+		result.append(_content.substr(pos, found - pos));
+		result.append(s2R);
+		pos = found + s1R.length();
 	}
-	result.append(content.substr(pos));
+	result.append(_content.substr(pos));
 	return result;
 }
 
-bool Replacer::writeToFile(const std::string& content)
+bool Replacer::writeToFile(const std::string& _content)
 {
-	std::ofstream out((_filename + ".replace").c_str());
+	std::ofstream out((filenameR + ".replace").c_str());
 	if (!out)
 	{
-		std::cerr << "Error: cannot write to file '" << _filename << ".replace'." << std::endl;
+		std::cerr << "Error: cannot write to file '" << filenameR << ".replace'." << std::endl;
 		return false;
 	}
-	out << content;
+	out << _content;
 	out.close();
 	return true;
 }

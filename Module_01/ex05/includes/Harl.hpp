@@ -6,12 +6,11 @@
 /*   By: shachowd <shachowd@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/03 13:44:48 by shachowd          #+#    #+#             */
-/*   Updated: 2025/06/04 11:28:05 by shachowd         ###   ########.fr       */
+/*   Updated: 2025/06/10 18:15:07 by shachowd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef HARL_H
-# define HARL_H
+#pragma once
 
 #include <iostream>
 
@@ -33,7 +32,5 @@ private:
 public:
 	Harl();
 	~Harl();
-	void complain(std::string level);
+	void complain(std::string _level);
 };
-
-#endif

@@ -1,6 +1,6 @@
 NAME		= zombieHorde
 CC			= c++
-CFLAGS		= -Wall -Wextra -Werror -std=c++98
+CFLAGS		= -Wall -Wextra -Werror -std=c++11
 
 INCLUDE		= -I./includes
 OBJ_DIR		= ./objects
@@ -21,7 +21,8 @@ $(OBJ_DIR)/%.o: $(SRCS_DIR)/%.cpp
 
 # Linking rule
 $(NAME): $(OBJS)
-	$(CC) $(CFLAGS) $(INCLUDE) $(OBJS) -o $(NAME)
+	@$(CC) $(CFLAGS) $(INCLUDE) $(OBJS) -o $(NAME)
+	@echo "$(RESET)Executable $(PINK)zombieHorde $(RESET)created."
 
 clean:
 	@$(RM) $(OBJS) $(OBJ_DIR)
@@ -35,6 +36,7 @@ re: fclean all
 
 # color
 RED		= \033[0;31m
+PINK		= \033[0;35m
 RESET		= \033[0;36m
 
 .PHONY: all clean fclean re

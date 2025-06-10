@@ -6,7 +6,7 @@
 /*   By: shachowd <shachowd@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/30 16:39:07 by shachowd          #+#    #+#             */
-/*   Updated: 2025/05/30 17:00:43 by shachowd         ###   ########.fr       */
+/*   Updated: 2025/06/10 17:07:17 by shachowd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,18 +14,18 @@
 
 int main(void)
 {
-	std::string str = "HI THIS IS BRAIN";
-	std::string* ptr = &str;
-	std::string& ref = str;
+	std::string string = "HI THIS IS BRAIN";
+	std::string *stringPTR = &string;
+	std::string &stringREF = string;
 
 
 	std::cout << "ADDRESSES::" << std::endl;
-	std::cout << "String Address: " << &str << std::endl;
-	std::cout << "Pointer Address: " << &ptr << std::endl;
-	std::cout << "Reference Address: " << &ref << std::endl << std::endl;
+	std::cout << "Address of String : " << &string << std::endl;
+	std::cout << "Address Held by Pointer: " << stringPTR << std::endl;
+	std::cout << "Address Held by Reference:" << &stringREF  << std::endl;
 
-	std::cout << "VALUES::" << std::endl;
-	std::cout << "String Value: " << str << std::endl;
-	std::cout << "String Pointer Value: " << *ptr << std::endl;
-	std::cout << "Reference Value: " << ref << std::endl;
+	std::cout << std::endl << "VALUES::" << std::endl;
+	std::cout << "Value of String: " << string << std::endl;
+	std::cout << "Value Pointed to by Pointer : " << *stringPTR << std::endl;
+	std::cout << "Value Pointed to by Reference : " << stringREF << std::endl;
 }

@@ -6,14 +6,17 @@
 /*   By: shachowd <shachowd@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/04 11:48:13 by shachowd          #+#    #+#             */
-/*   Updated: 2025/06/09 13:05:07 by shachowd         ###   ########.fr       */
+/*   Updated: 2025/06/09 17:09:03 by shachowd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#pragma once
 
 #ifndef FIXED_H
 # define FIXED_H
 
 # include <iostream>
+# include <cmath>
 
 class Fixed
 {
@@ -23,13 +26,23 @@ private:
 
 public:
 	Fixed();
+	Fixed(const float floatNumber, const int intNumber);
+	// Fixed(const int intNumber);
+	// Fixed(const float floatNumber);
 	Fixed(const Fixed& copyCons);
 	Fixed& operator = (const Fixed& copyCons);
 
 
 	int getRawBits(void) const;
 	void setRawBits(int const raw);
+	float toFloat(void) const;
+	int toInt( void ) const;
+
+	static int min()
+
 	~Fixed();
 };
+
+std::ostream &operator<<(std::ostream &out, const Fixed &source);
 
 #endif

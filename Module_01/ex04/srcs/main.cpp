@@ -6,18 +6,18 @@
 /*   By: shachowd <shachowd@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/02 15:25:16 by shachowd          #+#    #+#             */
-/*   Updated: 2025/06/03 11:13:31 by shachowd         ###   ########.fr       */
+/*   Updated: 2025/06/10 18:04:58 by shachowd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ArgParser.hpp"
-#include "Replacer.hpp"
+#include "../includes/ArgParser.hpp"
+#include "../includes/Replacer.hpp"
 
 int main(int argc, char **argv)
 {
 	if (argc != 4)
 	{
-		std::cout << "Wrong number of parameter." << std::endl;
+		std::cerr << "Wrong number of parameter." << std::endl;
 		return (1);
 	}
 

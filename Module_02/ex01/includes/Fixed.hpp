@@ -6,7 +6,7 @@
 /*   By: shachowd <shachowd@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/04 11:48:13 by shachowd          #+#    #+#             */
-/*   Updated: 2025/06/04 18:13:15 by shachowd         ###   ########.fr       */
+/*   Updated: 2025/06/09 16:01:17 by shachowd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,5 +38,7 @@ public:
 	int toInt( void ) const;
 	~Fixed();
 };
+
+std::ostream &operator<<(std::ostream &out, const Fixed &source);
 
 #endif

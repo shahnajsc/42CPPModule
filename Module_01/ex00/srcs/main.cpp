@@ -6,11 +6,11 @@
 /*   By: shachowd <shachowd@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/28 15:39:54 by shachowd          #+#    #+#             */
-/*   Updated: 2025/05/28 17:06:15 by shachowd         ###   ########.fr       */
+/*   Updated: 2025/06/10 14:05:13 by shachowd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#include "../includes/Zombie.hpp"
 
 int main()
 {
@@ -19,17 +19,24 @@ int main()
 	std::cout << "|       Welcome To ZombieLand     |" << std::endl;
 	std::cout << "-----------------------------------" << std::endl << std::endl;
 
-	std::cout << "STACK MEMORY TEST:" << std::endl;
-	randomChump("ElonMusk");
+	std::cout << "     STACK MEMORY TEST:" << std::endl;
+	randomChump("STACK_ZOMBIE");
 
-	std::cout << std::endl << "HEAP MEMORY TEST:" << std::endl;
-	Zombie *heapZom = newZombie("McDonaldTrump");
-	if (heapZom != NULL)
+	std::cout << std::endl << "     HEAP MEMORY TEST:" << std::endl;
+	Zombie *heapZom1 = newZombie("HEAP_ZOMBIE");
+	if (heapZom1 != nullptr)
 	{
-		heapZom->announce();
-		delete heapZom;
+		heapZom1->announce();
+		delete heapZom1;
 	}
 	else
-		std::cout << "Heap Zombie creation failed" << std::endl;
+	{
+		return (1);
+	}
+
+	std::cout << std::endl << "     UNNAMED ZOMBIE(stack):" << std::endl;
+	Zombie zomUnnamed;
+	zomUnnamed.announce();
+
 	return (0);
 }

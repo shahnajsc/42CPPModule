@@ -6,13 +6,18 @@
 /*   By: shachowd <shachowd@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/28 15:15:37 by shachowd          #+#    #+#             */
-/*   Updated: 2025/05/30 13:35:42 by shachowd         ###   ########.fr       */
+/*   Updated: 2025/06/10 14:34:01 by shachowd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#include "../includes/Zombie.hpp"
 
-Zombie::Zombie(std::string _name) : name(_name)
+Zombie::Zombie(): name("Unnamed")
+{
+	std::cout << "\"" << this->name << "\" turned into a Zombie..!!!" << std::endl;
+}
+
+Zombie::Zombie(const std::string &_name): name(_name)
 {
 	std::cout << "\"" << this->name << "\" turned into a Zombie..!!!" << std::endl;
 }

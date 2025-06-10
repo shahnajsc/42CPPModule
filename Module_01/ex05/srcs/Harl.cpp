@@ -6,11 +6,11 @@
 /*   By: shachowd <shachowd@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/03 13:45:07 by shachowd          #+#    #+#             */
-/*   Updated: 2025/06/04 11:01:41 by shachowd         ###   ########.fr       */
+/*   Updated: 2025/06/10 18:15:29 by shachowd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Harl.hpp"
+#include "../includes/Harl.hpp"
 
 Harl::Harl()
 {
@@ -37,7 +37,7 @@ void Harl::error( void )
     std::cout << ERROR << std::endl;
 }
 
-void Harl::complain(std::string level)
+void Harl::complain(std::string _level)
 {
     typedef void (Harl::*HarlFunc)(void);
     HarlFunc funcs[4] = {&Harl::debug, &Harl::info, &Harl::warning, &Harl::error};
@@ -45,17 +45,17 @@ void Harl::complain(std::string level)
 
     int index = -1;
     for (int i = 0; i < 4; i++) {
-        index = (level == levels[i]) ? i : index;
+        index = (_level == levels[i]) ? i : index;
     }
     switch (index)
     {
     case -1:
-        std::cout << level;
+        std::cout << _level;
         std::cout << INVALID << std::endl;
         break;
 
     default:
-        std::cout << level;
+        std::cout << _level;
         (this->*funcs[index])();
         break;
     }

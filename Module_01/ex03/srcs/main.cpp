@@ -6,13 +6,13 @@
 /*   By: shachowd <shachowd@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/02 12:23:11 by shachowd          #+#    #+#             */
-/*   Updated: 2025/06/02 14:15:33 by shachowd         ###   ########.fr       */
+/*   Updated: 2025/06/10 17:25:09 by shachowd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Weapon.hpp"
-#include "HumanA.hpp"
-#include "HumanB.hpp"
+#include "../includes/Weapon.hpp"
+#include "../includes/HumanA.hpp"
+#include "../includes/HumanB.hpp"
 
 int main()
 {
@@ -26,6 +26,7 @@ int main()
 	{
 		HumanB jim("Jim");
 		jim.attack();
+		
 		Weapon club = Weapon("crude spiked club");
 		jim.setWeapon(club);
 		jim.attack();
