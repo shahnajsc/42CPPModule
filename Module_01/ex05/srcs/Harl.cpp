@@ -6,7 +6,7 @@
 /*   By: shachowd <shachowd@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/03 13:45:07 by shachowd          #+#    #+#             */
-/*   Updated: 2025/06/10 18:15:29 by shachowd         ###   ########.fr       */
+/*   Updated: 2025/06/11 10:17:52 by shachowd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,8 +50,8 @@ void Harl::complain(std::string _level)
     switch (index)
     {
     case -1:
-        std::cout << _level;
-        std::cout << INVALID << std::endl;
+        std::cerr << _level;
+        std::cerr << INVALID << std::endl;
         break;
 
     default:

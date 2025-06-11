@@ -6,12 +6,11 @@
 /*   By: shachowd <shachowd@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/04 11:48:13 by shachowd          #+#    #+#             */
-/*   Updated: 2025/06/09 13:05:07 by shachowd         ###   ########.fr       */
+/*   Updated: 2025/06/11 12:18:40 by shachowd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FIXED_H
-# define FIXED_H
+#pragma once
 
 # include <iostream>
 
@@ -31,5 +30,3 @@ public:
 	void setRawBits(int const raw);
 	~Fixed();
 };
-
-#endif

@@ -6,11 +6,11 @@
 /*   By: shachowd <shachowd@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/04 11:48:17 by shachowd          #+#    #+#             */
-/*   Updated: 2025/06/05 10:19:42 by shachowd         ###   ########.fr       */
+/*   Updated: 2025/06/11 12:14:15 by shachowd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Fixed.hpp"
+#include "../includes/Fixed.hpp"
 
 Fixed::Fixed() : fpNumber(0)
 {

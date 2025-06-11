@@ -6,11 +6,11 @@
 /*   By: shachowd <shachowd@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/03 13:44:48 by shachowd          #+#    #+#             */
-/*   Updated: 2025/06/10 18:18:28 by shachowd         ###   ########.fr       */
+/*   Updated: 2025/06/11 10:26:24 by shachowd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#pragma
+#pragma once
 
 #include <iostream>
 

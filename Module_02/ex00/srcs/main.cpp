@@ -6,11 +6,11 @@
 /*   By: shachowd <shachowd@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/04 11:47:49 by shachowd          #+#    #+#             */
-/*   Updated: 2025/06/04 17:38:05 by shachowd         ###   ########.fr       */
+/*   Updated: 2025/06/11 12:14:22 by shachowd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Fixed.hpp"
+#include "../includes/Fixed.hpp"
 
 int main( void )
 {
