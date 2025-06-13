@@ -36,7 +36,7 @@ re: fclean all
 
 # color
 RED			= \033[0;31m
-PINK		= \033[0;33m
+PINK		= \033[0;35m
 RESET		= \033[0;36m
 
 .PHONY: all clean fclean re

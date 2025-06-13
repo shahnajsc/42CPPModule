@@ -6,7 +6,7 @@
 /*   By: shachowd <shachowd@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/04 11:48:13 by shachowd          #+#    #+#             */
-/*   Updated: 2025/06/11 12:18:40 by shachowd         ###   ########.fr       */
+/*   Updated: 2025/06/13 12:13:29 by shachowd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 class Fixed
 {
 private:
-	int fpNumber;
+	int fpValue;
 	static const int fracBits = 8;
 
 public:

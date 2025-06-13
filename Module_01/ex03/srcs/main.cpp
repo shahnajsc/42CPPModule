@@ -6,7 +6,7 @@
 /*   By: shachowd <shachowd@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/02 12:23:11 by shachowd          #+#    #+#             */
-/*   Updated: 2025/06/10 17:25:09 by shachowd         ###   ########.fr       */
+/*   Updated: 2025/06/13 11:02:37 by shachowd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ int main()
 	{
 		HumanB jim("Jim");
 		jim.attack();
-		
+
 		Weapon club = Weapon("crude spiked club");
 		jim.setWeapon(club);
 		jim.attack();

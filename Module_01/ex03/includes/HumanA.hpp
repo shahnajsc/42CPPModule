@@ -6,13 +6,15 @@
 /*   By: shachowd <shachowd@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/02 11:06:56 by shachowd          #+#    #+#             */
-/*   Updated: 2025/06/10 17:21:13 by shachowd         ###   ########.fr       */
+/*   Updated: 2025/06/13 11:00:49 by shachowd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 
 #include "Weapon.hpp"
+#include <iostream>
+#include <string>
 
 class HumanA
 {

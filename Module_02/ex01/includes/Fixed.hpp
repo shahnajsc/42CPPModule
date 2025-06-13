@@ -6,14 +6,11 @@
 /*   By: shachowd <shachowd@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/04 11:48:13 by shachowd          #+#    #+#             */
-/*   Updated: 2025/06/09 16:01:17 by shachowd         ###   ########.fr       */
+/*   Updated: 2025/06/13 14:04:47 by shachowd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
-
-#ifndef FIXED_H
-# define FIXED_H
 
 # include <iostream>
 # include <cmath>
@@ -21,7 +18,7 @@
 class Fixed
 {
 private:
-	int fpNumber;
+	int fpValue;
 	static const int fracBits = 8;
 
 public:
@@ -40,5 +37,3 @@ public:
 };
 
 std::ostream &operator<<(std::ostream &out, const Fixed &source);
-
-#endif
