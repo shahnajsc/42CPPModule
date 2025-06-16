@@ -1,6 +1,6 @@
 NAME		= fixedPoint
 CC			= c++
-CFLAGS		= -Wall -Wextra -Werror -std=c++98
+CFLAGS		= -Wall -Wextra -Werror -std=c++11
 
 INCLUDE		= -I./includes
 OBJ_DIR		= ./objects

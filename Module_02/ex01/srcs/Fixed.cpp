@@ -6,7 +6,7 @@
 /*   By: shachowd <shachowd@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/04 11:48:17 by shachowd          #+#    #+#             */
-/*   Updated: 2025/06/13 14:05:46 by shachowd         ###   ########.fr       */
+/*   Updated: 2025/06/16 15:34:43 by shachowd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ Fixed::Fixed() : fpValue(0)
 Fixed::Fixed(const int intNumber)
 {
 	std::cout << "Int constructor called" << std::endl;
-	this->fpValue = intNumber<< fracBits;
+	this->fpValue = intNumber << fracBits;
 }
 
 Fixed::Fixed(const float floatNumber)
@@ -59,7 +59,7 @@ void Fixed::setRawBits(int const raw)
 }
 
 float Fixed::toFloat(void) const {
-    return ((float)this->fpValue / (1 << this->fracBits));
+	return ((float)this->fpValue / (1 << this->fracBits));
 }
 
 int Fixed::toInt (void) const {
@@ -67,6 +67,6 @@ int Fixed::toInt (void) const {
 }
 
 std::ostream &operator<<(std::ostream &out, const Fixed &source) {
-    out << source.toFloat();
-    return (out);
+	out << source.toFloat();
+	return (out);
 }

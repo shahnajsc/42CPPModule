@@ -6,11 +6,11 @@
 /*   By: shachowd <shachowd@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/04 11:48:17 by shachowd          #+#    #+#             */
-/*   Updated: 2025/06/09 16:39:41 by shachowd         ###   ########.fr       */
+/*   Updated: 2025/06/16 15:37:04 by shachowd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Fixed.hpp"
+#include "../includes/Fixed.hpp"
 
 Fixed::Fixed() : fpNumber(0)
 {
@@ -64,6 +64,16 @@ float Fixed::toFloat(void) const {
 
 int Fixed::toInt (void) const {
     return (this->fpNumber >> this->fracBits);
+}
+
+bool Fixed::operator>(const Fixed &copyObj) const
+{
+	return (this->fpNumber > copyObj.getRawBits());
+}
+
+Fixed Fixed::operator+(const Fixed &copyObj) const
+{
+	return (this->fpNumber )
 }
 
 std::ostream &operator<<(std::ostream &out, const Fixed &source) {
