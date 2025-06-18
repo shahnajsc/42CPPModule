@@ -57,7 +57,17 @@
 		"span": "cpp",
 		"text_encoding": "cpp",
 		"variant": "cpp",
-		"fstream": "cpp"
+		"fstream": "cpp",
+		"__bit_reference": "cpp",
+		"__config": "cpp",
+		"__locale": "cpp",
+		"__threading_support": "cpp",
+		"__verbose_abort": "cpp",
+		"bitset": "cpp",
+		"execution": "cpp",
+		"ios": "cpp",
+		"locale": "cpp",
+		"mutex": "cpp"
 	},
 	"editor.stickyTabStops": true,
 	"editor.tabCompletion": "on"
