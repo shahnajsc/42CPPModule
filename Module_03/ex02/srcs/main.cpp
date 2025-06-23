@@ -6,11 +6,11 @@
 /*   By: shachowd <shachowd@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/04 11:47:49 by shachowd          #+#    #+#             */
-/*   Updated: 2025/06/23 17:30:34 by shachowd         ###   ########.fr       */
+/*   Updated: 2025/06/23 18:12:26 by shachowd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/ScavTrap.hpp"
+#include "../includes/FragTrap.hpp"
 
 int main( void )
 {
@@ -30,7 +30,7 @@ int main( void )
 	std::cout << std::endl;
 
 
-	ScavTrap scav("Scav");
+	FragTrap scav("Frag");
 	ClapTrap *clap2 = &scav;
 
 	scav.attack("Clap1");
@@ -43,9 +43,9 @@ int main( void )
 	scav.takeDamage(1);
 	scav.attack("Clap4");
 	scav.beRepaired(2);
-	scav.guardGate();
+	scav.highFivesGuys();
 	scav.takeDamage(91);
-	scav.guardGate();
+	scav.highFivesGuys();
 
 	std::cout << std::endl;
 	std::cout << std::endl;
