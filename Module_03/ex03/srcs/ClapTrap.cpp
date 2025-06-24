@@ -6,7 +6,7 @@
 /*   By: shachowd <shachowd@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/04 11:48:17 by shachowd          #+#    #+#             */
-/*   Updated: 2025/06/24 15:49:05 by shachowd         ###   ########.fr       */
+/*   Updated: 2025/06/24 14:20:02 by shachowd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,13 +53,13 @@ void ClapTrap::attack(const std::string& target)
 {
 	if (hitPoints < 1)
 	{
-		std::cout << "ClapTrap: " << name << " has no hit point left ";
-		std::cout << "to attack" << std::endl;
+		std::cout << "ClapTrap: " << name << " has no hit point left to attack";
+		std::cout << std::endl;
 	}
 	else if (energyPoints < 1)
 	{
-		std::cout << "ClapTrap: " << name << " has no enegry points left ";
-		std::cout << "to attack" << std::endl;
+		std::cout << "ClapTrap: " << name << " has no enegry points left";
+		std::cout << " to attack" << std::endl;
 	}
 	else
 	{
@@ -94,13 +94,13 @@ void ClapTrap::beRepaired(unsigned int amount)
 {
 	if (hitPoints < 1)
 	{
-		std::cout << "ClapTrap: " << name << " has no hit point left to get ";
-		std::cout << "repaired" << std::endl;
+		std::cout << "ClapTrap: " << name << " has no hit point left to";
+		std::cout << " get repaired" << std::endl;
 	}
 	else if (energyPoints < 1)
 	{
-		std::cout << "ClapTrap: " << name << " have no enegry points to get ";
-		std::cout << "repaired" << std::endl;
+		std::cout << "ClapTrap: " << name << " has no enegry points left";
+		std::cout << " to get repaired" << std::endl;
 	}
 	else
 	{

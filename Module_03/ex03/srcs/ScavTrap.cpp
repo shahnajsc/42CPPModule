@@ -6,7 +6,7 @@
 /*   By: shachowd <shachowd@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/19 15:29:14 by shachowd          #+#    #+#             */
-/*   Updated: 2025/06/24 16:03:11 by shachowd         ###   ########.fr       */
+/*   Updated: 2025/06/24 15:23:27 by shachowd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,8 +59,8 @@ void ScavTrap::attack(const std::string& target)
 	}
 	else if (energyPoints < 1)
 	{
-		std::cout << "ScavTrap: " << name << " has no enegry points left to ";
-		std::cout << "attack" << std::endl;
+		std::cout << "ScavTrap: " << name << " has no enegry points left to";
+		std::cout << " attack" << std::endl;
 	}
 	else
 	{
@@ -75,8 +75,5 @@ void ScavTrap::guardGate()
 	if (hitPoints < 1)
 		std::cout << "ScavTrap: " << name << " is already dead!" << std::endl;
 	else
-	{
-		std::cout << "ScavTrap: " << name << " is now in Gate keeper mode";
-		std::cout << std::endl;
-	}
+		std::cout << "ScavTrap: " << name << " is now in Gate keeper mode" << std::endl;
 }
