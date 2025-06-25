@@ -6,7 +6,7 @@
 /*   By: shachowd <shachowd@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/24 16:22:50 by shachowd          #+#    #+#             */
-/*   Updated: 2025/06/24 16:32:00 by shachowd         ###   ########.fr       */
+/*   Updated: 2025/06/25 15:01:56 by shachowd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,19 +21,12 @@ protected:
 
 public:
 	Animal();
-	Animal(const std::string *type);
 	Animal(const Animal& copyCons);
 	Animal& operator = (const Animal& otherCons);
-	~Animal();
+	virtual ~Animal();
 
-	virtual void makeSound();
-	virtual std::string getType();
+	virtual void makeSound() const;
+	std::string getType() const;
 };
 
-Animal::Animal(/* args */)
-{
-}
 
-Animal::~Animal()
-{
-}

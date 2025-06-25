@@ -5,7 +5,7 @@ CFLAGS		= -Wall -Wextra -Werror -std=c++11
 INCLUDE		= -I./includes
 OBJ_DIR		= ./objects
 SRCS_DIR 	= ./srcs
-SRCS_FILES 	= main.cpp Polymorphism.cpp
+SRCS_FILES 	= main.cpp Animal.cpp Cat.cpp Dog.cpp WrongAnimal.cpp WrongCat.cpp WrongDog.cpp
 
 SRCS		= $(addprefix ($(SRCS_DIR))/, $(SRCS_FILES))
 OBJS		= $(addprefix $(OBJ_DIR)/,  $(SRCS_FILES:.cpp=.o))

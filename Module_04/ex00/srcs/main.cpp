@@ -6,40 +6,28 @@
 /*   By: shachowd <shachowd@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/04 11:47:49 by shachowd          #+#    #+#             */
-/*   Updated: 2025/06/19 14:44:25 by shachowd         ###   ########.fr       */
+/*   Updated: 2025/06/25 15:29:37 by shachowd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/ClapTrap.hpp"
+#include "../includes/Animal.hpp"
+#include "../includes/Cat.hpp"
+#include "../includes/Dog.hpp"
+#include "../includes/WrongAnimal.hpp"
+#include "../includes/WrongCat.hpp"
+#include "../includes/WrongDog.hpp"
 
 int main( void )
 {
-	ClapTrap ob1("Clap1");
+	const Animal* meta = new Animal();
+	const Animal* i = new Cat();
+	std::cout << meta->getType() << " " << std::endl;
+	std::cout << i->getType() << " " << std::endl;
+	i->makeSound(); //will output the cat sound!
+	meta->makeSound();
 
-	ob1.attack("Trap1");
-	ob1.takeDamage(3);
-	ob1.attack("Trap2");
-	ob1.attack("Trap3");
-	ob1.beRepaired(2);
-	ob1.takeDamage(7);
-	ob1.takeDamage(2);
-	ob1.takeDamage(1);
-	ob1.attack("Trap4");
-	ob1.beRepaired(2);
-
-	std::cout << std::endl;
-	ClapTrap ob2;
-
-	ob2.attack("Clap1");
-	ob2.takeDamage(3);
-	ob2.attack("Clap2");
-	ob2.attack("Clap3");
-	ob2.beRepaired(2);
-	ob2.takeDamage(7);
-	ob2.takeDamage(2);
-	ob2.takeDamage(1);
-	ob2.attack("Clap4");
-	ob2.beRepaired(2);
+	delete i;
+	delete meta;
 
 	return 0;
 }

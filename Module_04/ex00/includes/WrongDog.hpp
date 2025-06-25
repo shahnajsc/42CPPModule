@@ -1,27 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.hpp                                            :+:      :+:    :+:   */
+/*   WrongDog.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: shachowd <shachowd@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/06/25 09:59:41 by shachowd          #+#    #+#             */
-/*   Updated: 2025/06/25 14:30:09 by shachowd         ###   ########.fr       */
+/*   Created: 2025/06/25 14:10:04 by shachowd          #+#    #+#             */
+/*   Updated: 2025/06/25 14:35:03 by shachowd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 
 #include <iostream>
-#include "../includes/Animal.hpp"
+#include "../includes/WrongAnimal.hpp"
 
-class Cat : public Animal
+class WrongDog : public WrongAnimal
 {
 public:
-	 Cat();
-	 Cat(const Cat& copyCons);
-	 Cat& operator = (const Cat& copyCons);
-	~ Cat();
+	WrongDog();
+	WrongDog(const WrongDog& copyCons);
+	WrongDog& operator = (const WrongDog& copyCons);
+	~WrongDog();
 
 	void makeSound() const;
 };
