@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   WrongAnimal.hpp                                    :+:      :+:    :+:   */
+/*   Brain.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: shachowd <shachowd@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/06/25 14:09:09 by shachowd          #+#    #+#             */
-/*   Updated: 2025/06/26 11:57:35 by shachowd         ###   ########.fr       */
+/*   Created: 2025/06/26 12:33:32 by shachowd          #+#    #+#             */
+/*   Updated: 2025/06/26 13:57:44 by shachowd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,19 +14,14 @@
 
 #include <iostream>
 
-class WrongAnimal
+class Brain
 {
 protected:
-	std::string type;
+	std::string ideas[100];
 
 public:
-	WrongAnimal();
-	WrongAnimal(const WrongAnimal& copyCons);
-	WrongAnimal& operator = (const WrongAnimal& otherCons);
-	virtual ~WrongAnimal();
-
-	void makeSound() const;
-	std::string getType() const;
+	Brain();
+	Brain(const Brain& copyCons);
+	Brain& operator = (const Brain& otherCons);
+	virtual ~Brain();
 };
-
-

@@ -1,32 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   WrongAnimal.hpp                                    :+:      :+:    :+:   */
+/*   Cat.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: shachowd <shachowd@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/06/25 14:09:09 by shachowd          #+#    #+#             */
-/*   Updated: 2025/06/26 11:57:35 by shachowd         ###   ########.fr       */
+/*   Created: 2025/06/25 09:59:41 by shachowd          #+#    #+#             */
+/*   Updated: 2025/06/26 15:01:14 by shachowd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 
 #include <iostream>
+#include "../includes/Animal.hpp"
+#include "../includes/Brain.hpp"
 
-class WrongAnimal
+class Cat : public Animal, public Brain
 {
-protected:
-	std::string type;
+private:
+	Brain *brain;
 
 public:
-	WrongAnimal();
-	WrongAnimal(const WrongAnimal& copyCons);
-	WrongAnimal& operator = (const WrongAnimal& otherCons);
-	virtual ~WrongAnimal();
+	 Cat();
+	 Cat(const Cat& copyCons);
+	 Cat& operator = (const Cat& copyCons);
+	~ Cat();
 
 	void makeSound() const;
-	std::string getType() const;
 };
-
-
