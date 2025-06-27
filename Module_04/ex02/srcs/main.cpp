@@ -6,7 +6,7 @@
 /*   By: shachowd <shachowd@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/04 11:47:49 by shachowd          #+#    #+#             */
-/*   Updated: 2025/06/27 10:38:56 by shachowd         ###   ########.fr       */
+/*   Updated: 2025/06/27 11:59:30 by shachowd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,8 +34,8 @@ void default_test()
 	std::cout << std::endl << "\033[32m" << "		| DEFAULT TEST |		";
 	std::cout << "\033[37m"  << std::endl;
 
-	const Animal* j = new Dog();
-	const Animal* i = new Cat();
+	const AAnimal* j = new Dog();
+	const AAnimal* i = new Cat();
 	delete j;
 	delete i;
 }
@@ -46,7 +46,7 @@ void animal_array_test()
 	std::cout << "\033[37m"  << std::endl;
 
 	std::cout << std::endl;
-	const Animal* animals[6];
+	const AAnimal* animals[6];
 
 	for (int i = 0; i < 6; i++)
 	{
@@ -77,16 +77,17 @@ void deep_copy_test()
 
 	Dog dog1;
 	Dog dog2(dog1);
-
+	std::cout << "__________________________________" << std::endl;
 	std::cout << std::endl << "IDEAS (before change) " << std::endl;
 	std::cout << "Dog1 IDEA: " << dog1.getIdea(0) << std::endl;
 	std::cout << "Dog2 IDEA: " << dog2.getIdea(0) << std::endl;
 
 	dog1.setIdea(0, "new idea 1");
 	dog2.setIdea(0, "new idea 2");
-
+	std::cout << "__________________________________" << std::endl;
 	std::cout << std::endl << "IDEAS (after change) " << std::endl;
 	std::cout << "Dog1 IDEA: " << dog1.getIdea(0) << std::endl;
 	std::cout << "Dog2 IDEA: " << dog2.getIdea(0) << std::endl;
+	std::cout << "__________________________________" << std::endl;
 	std::cout << std::endl;
 }

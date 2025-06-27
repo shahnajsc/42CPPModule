@@ -1,31 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Dog.hpp                                            :+:      :+:    :+:   */
+/*   Cat.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: shachowd <shachowd@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/06/25 09:59:38 by shachowd          #+#    #+#             */
-/*   Updated: 2025/06/27 11:44:59 by shachowd         ###   ########.fr       */
+/*   Created: 2025/06/25 09:59:41 by shachowd          #+#    #+#             */
+/*   Updated: 2025/06/27 11:54:17 by shachowd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 
 #include <iostream>
-#include "../includes/Animal.hpp"
+#include "../includes/AAnimal.hpp"
 #include "../includes/Brain.hpp"
 
-class Dog : public Animal, public Brain
+class Cat : public AAnimal, public Brain
 {
 private:
 	Brain *brain;
 
 public:
-	Dog();
-	Dog(const Dog& copyCons);
-	Dog& operator = (const Dog& copyCons);
-	~Dog();
+	 Cat();
+	 Cat(const Cat& copyCons);
+	 Cat& operator = (const Cat& copyCons);
+	~ Cat();
 
 	void makeSound() const;
 	void setIdea(unsigned int index, const std::string& idea);
