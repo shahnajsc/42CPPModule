@@ -6,7 +6,7 @@
 /*   By: shachowd <shachowd@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/04 11:48:17 by shachowd          #+#    #+#             */
-/*   Updated: 2025/06/24 14:20:02 by shachowd         ###   ########.fr       */
+/*   Updated: 2025/06/30 13:13:48 by shachowd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 ClapTrap::ClapTrap() : name("Unnamed"), hitPoints(10),
 						energyPoints(10), attackDamage(0)
 {
-	std::cout << "\033[32m" << "By Default constructor, ClapTrap " << name;
+	std::cout << "\033[32m" << "Default constructor called, ClapTrap " << name;
 	std::cout << " created." << "\033[37m" << std::endl;
 }
 
@@ -30,14 +30,14 @@ ClapTrap::ClapTrap(const ClapTrap& copyCons)
 {
 	*this = copyCons;
 }
-ClapTrap& ClapTrap::operator = (const ClapTrap& copyCons)
+ClapTrap& ClapTrap::operator = (const ClapTrap& otherCons)
 {
-	if (this != &copyCons)
+	if (this != &otherCons)
 	{
-		this->name			= copyCons.name;
-		this->hitPoints		= copyCons.hitPoints;
-		this->energyPoints	= copyCons.energyPoints;
-		this->attackDamage	= copyCons.attackDamage;
+		this->name			= otherCons.name;
+		this->hitPoints		= otherCons.hitPoints;
+		this->energyPoints	= otherCons.energyPoints;
+		this->attackDamage	= otherCons.attackDamage;
 	}
 
 	return (*this);
@@ -71,13 +71,10 @@ void ClapTrap::attack(const std::string& target)
 
 void ClapTrap::takeDamage(unsigned int amount)
 {
-	attackDamage += amount; // ??
 	if (hitPoints > amount)
 	{
 		std::cout << "ClapTrap: " << name << " damaged " << amount;
-		std::cout << " hit points! Total Damage: " ; // ??
-		std::cout << attackDamage; // ??
-		std::cout << " ." << std::endl;
+		std::cout << " hit points!"  << std::endl;
 		hitPoints -= amount;
 	}
 	else if (hitPoints == 0)

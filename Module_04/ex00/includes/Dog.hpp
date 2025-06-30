@@ -6,7 +6,7 @@
 /*   By: shachowd <shachowd@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/25 09:59:38 by shachowd          #+#    #+#             */
-/*   Updated: 2025/06/25 14:15:22 by shachowd         ###   ########.fr       */
+/*   Updated: 2025/06/30 15:53:04 by shachowd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,5 +23,5 @@ public:
 	Dog& operator = (const Dog& copyCons);
 	~Dog();
 
-	void makeSound() const;
+	void makeSound() const override;
 };

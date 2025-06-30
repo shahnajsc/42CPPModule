@@ -6,7 +6,7 @@
 /*   By: shachowd <shachowd@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/23 17:32:42 by shachowd          #+#    #+#             */
-/*   Updated: 2025/06/26 11:51:12 by shachowd         ###   ########.fr       */
+/*   Updated: 2025/06/30 15:39:33 by shachowd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,18 +14,18 @@
 
 FragTrap::FragTrap() : ClapTrap()
 {
-	hitPoints		= 100;
-	energyPoints	= 100;
-	attackDamage	= 30;
-	std::cout << "\033[32m" << "Default Constructor Called, SacvTrap " << name;
+	this->hitPoints		= 100;
+	this->energyPoints	= 100;
+	this->attackDamage	= 30;
+	std::cout << "\033[32m" << "Default Constructor Called, FragTrap " << name;
 	std::cout << " created." << "\033[37m" << std::endl;
 }
 
 FragTrap::FragTrap(const std::string _name) : ClapTrap(_name)
 {
-	hitPoints		= 100;
-	energyPoints	= 100;
-	attackDamage	= 30;
+	this->hitPoints		= 100;
+	this->energyPoints	= 100;
+	this->attackDamage	= 30;
 	std::cout << "\033[32m" << "Constructor Called, FragTrap " << name;
 	std::cout << " created." << "\033[37m" << std::endl;
 }
@@ -38,7 +38,10 @@ FragTrap::FragTrap(const FragTrap& copyCons) : ClapTrap(copyCons)
 FragTrap& FragTrap::operator = (const FragTrap& otherCons)
 {
 	std::cout << "FragTrap: Copy assignment operator called." << std::endl;
-	ClapTrap::operator = (otherCons);
+	if (this != &otherCons)
+	{
+		ClapTrap::operator = (otherCons);
+	}
 	return (*this);
 }
 
@@ -57,7 +60,7 @@ void FragTrap::attack(const std::string& target)
 	}
 	else if (energyPoints < 1)
 	{
-		std::cout << "FragTrap: " << name << " has no enegry points left to ";
+		std::cout << "FragTrap: " << name << " has no energy points left to ";
 		std::cout << "attack" << std::endl;
 	}
 	else
@@ -70,7 +73,7 @@ void FragTrap::attack(const std::string& target)
 
 void FragTrap::highFivesGuys()
 {
-	if (hitPoints < 1)
+	if (hitPoints < 1 || energyPoints < 1)
 		std::cout << "FragTrap: " << name << " is already dead!" << std::endl;
 	else
 	{

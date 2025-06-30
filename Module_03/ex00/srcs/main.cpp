@@ -6,7 +6,7 @@
 /*   By: shachowd <shachowd@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/04 11:47:49 by shachowd          #+#    #+#             */
-/*   Updated: 2025/06/19 14:44:25 by shachowd         ###   ########.fr       */
+/*   Updated: 2025/06/30 12:07:39 by shachowd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ int main( void )
 	ob2.attack("Clap2");
 	ob2.attack("Clap3");
 	ob2.beRepaired(2);
-	ob2.takeDamage(7);
+	ob2.takeDamage(5);
 	ob2.takeDamage(2);
 	ob2.takeDamage(1);
 	ob2.attack("Clap4");

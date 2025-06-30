@@ -6,7 +6,7 @@
 /*   By: shachowd <shachowd@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/23 17:32:39 by shachowd          #+#    #+#             */
-/*   Updated: 2025/06/23 18:15:04 by shachowd         ###   ########.fr       */
+/*   Updated: 2025/06/30 13:08:26 by shachowd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,6 @@ public:
 	FragTrap& operator = (const FragTrap& otherCons);
 	~FragTrap();
 
-	void attack(const std::string& target); // override??
+	void attack(const std::string& target) override;
 	void highFivesGuys(void);
 };

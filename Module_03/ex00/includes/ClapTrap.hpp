@@ -6,7 +6,7 @@
 /*   By: shachowd <shachowd@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/04 11:48:13 by shachowd          #+#    #+#             */
-/*   Updated: 2025/06/19 13:02:33 by shachowd         ###   ########.fr       */
+/*   Updated: 2025/06/30 12:05:11 by shachowd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ public:
 	ClapTrap();
 	ClapTrap(const std::string _name);
 	ClapTrap(const ClapTrap& copyCons);
-	ClapTrap& operator = (const ClapTrap& copyCons);
+	ClapTrap& operator = (const ClapTrap& otherCons);
 	~ClapTrap();
 
 	void attack(const std::string& target);

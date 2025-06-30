@@ -6,7 +6,7 @@
 /*   By: shachowd <shachowd@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/19 15:29:14 by shachowd          #+#    #+#             */
-/*   Updated: 2025/06/24 15:39:44 by shachowd         ###   ########.fr       */
+/*   Updated: 2025/06/30 15:38:52 by shachowd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 ScavTrap::ScavTrap() : ClapTrap()
 {
-	hitPoints		= 100;
-	energyPoints	= 50;
-	attackDamage	= 20;
+	this->hitPoints		= 100;
+	this->energyPoints	= 50;
+	this->attackDamage	= 20;
 
 	std::cout << "\033[32m" << "Default Constructor Called, SacvTrap " << name;
 	std::cout << " created." << "\033[37m" << std::endl;
@@ -24,9 +24,9 @@ ScavTrap::ScavTrap() : ClapTrap()
 
 ScavTrap::ScavTrap(const std::string& _name) : ClapTrap(_name)
 {
-	hitPoints		= 100;
-	energyPoints	= 50;
-	attackDamage	= 20;
+	this->hitPoints		= 100;
+	this->energyPoints	= 50;
+	this->attackDamage	= 20;
 
 	std::cout << "\033[32m" << "Constructor Called, SacvTrap " << name;
 	std::cout << " created." << "\033[37m" << std::endl;
@@ -40,7 +40,10 @@ ScavTrap::ScavTrap(const ScavTrap& copyCons) : ClapTrap(copyCons)
 ScavTrap &ScavTrap::operator = (const ScavTrap& otherCons)
 {
 	std::cout << "ScavTrap: Copy assignment operator called." << std::endl;
-	ClapTrap::operator= (otherCons);
+	if (this != &otherCons)
+	{
+		ClapTrap::operator= (otherCons);
+	}
 	return (*this);
 }
 
@@ -59,7 +62,7 @@ void ScavTrap::attack(const std::string& target)
 	}
 	else if (energyPoints < 1)
 	{
-		std::cout << "ScavTrap: " << name << " has no enegry points left";
+		std::cout << "ScavTrap: " << name << " has no energy points left";
 		std::cout << " to attack" << std::endl;
 	}
 	else
@@ -76,7 +79,7 @@ void ScavTrap::guardGate()
 		std::cout << "ScavTrap: " << name << " is already dead!" << std::endl;
 	else
 	{
-		std::cout << "ScavTrap: " << name << " is now in Gate";
-		std::cout << " keeper mode" << std::endl;
+		std::cout << "ScavTrap: " << name << " is now in Gate keeper mode.";
+		std::cout << std::endl;
 	}
 }

@@ -6,7 +6,7 @@
 /*   By: shachowd <shachowd@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/04 11:47:49 by shachowd          #+#    #+#             */
-/*   Updated: 2025/06/24 16:05:47 by shachowd         ###   ########.fr       */
+/*   Updated: 2025/06/30 13:10:46 by shachowd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,14 +20,7 @@ int main( void )
 	test1();
 	test2();
 
-	FragTrap scav2("Frag2");
-	ClapTrap *clap2 = &scav2;
 	std::cout << std::endl;
-	std::cout << std::endl;
-	std::cout << std::endl;
-	clap2->attack("DDDD");
-	clap2->beRepaired(5);
-	clap2->takeDamage(9);
 
 	return 0;
 }
