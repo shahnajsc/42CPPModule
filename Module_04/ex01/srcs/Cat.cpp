@@ -6,7 +6,7 @@
 /*   By: shachowd <shachowd@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/25 10:41:00 by shachowd          #+#    #+#             */
-/*   Updated: 2025/06/27 11:45:16 by shachowd         ###   ########.fr       */
+/*   Updated: 2025/07/04 14:08:23 by shachowd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,8 @@
 Cat::Cat() : Animal(), brain(new Brain())
 {
 	this->type = "Cat";
-	std::cout << "Cat: Default constructor called." << std::endl;
-
+	std::cout << "\033[32m" << "Cat: Default constructor called." << "\033[37m";
+	std::cout << std::endl;
 }
 
 Cat::Cat(const Cat &copyCons): Animal(copyCons), brain(new Brain(*copyCons.brain))
@@ -30,18 +30,17 @@ Cat &Cat::operator=(const Cat &otherCons)
 	if (this != &otherCons)
 	{
 		Animal::operator=(otherCons);
+		Brain* newBrain = otherCons.brain ? new Brain(*otherCons.brain) : nullptr;
 		delete this->brain;
-		if (otherCons.brain != nullptr)
-			this->brain = new Brain(*otherCons.brain);
-		else
-			this->brain = nullptr;
+		this->brain = newBrain;
 	}
 	return (*this);
 }
 
 Cat::~Cat()
 {
-	std::cout << "Cat: Destructor called." << std::endl;
+	std::cout << "\033[31m" << "Cat: Destructor called." << "\033[37m";
+	std::cout << std::endl;
 	delete this->brain;
 }
 

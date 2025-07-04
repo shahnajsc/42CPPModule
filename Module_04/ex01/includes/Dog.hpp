@@ -6,7 +6,7 @@
 /*   By: shachowd <shachowd@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/25 09:59:38 by shachowd          #+#    #+#             */
-/*   Updated: 2025/06/27 11:44:59 by shachowd         ###   ########.fr       */
+/*   Updated: 2025/07/04 14:16:59 by shachowd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 #include "../includes/Animal.hpp"
 #include "../includes/Brain.hpp"
 
-class Dog : public Animal, public Brain
+class Dog : public Animal
 {
 private:
 	Brain *brain;

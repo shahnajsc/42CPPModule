@@ -1,33 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.hpp                                            :+:      :+:    :+:   */
+/*   Character.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: shachowd <shachowd@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/06/25 09:59:41 by shachowd          #+#    #+#             */
-/*   Updated: 2025/07/04 14:26:03 by shachowd         ###   ########.fr       */
+/*   Created: 2025/07/04 15:30:23 by shachowd          #+#    #+#             */
+/*   Updated: 2025/07/04 16:00:29 by shachowd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+
 #pragma once
 
-#include <iostream>
-#include "../includes/Animal.hpp"
-#include "../includes/Brain.hpp"
+#include "AMateria.hpp"
+#include "ICharacter.hpp"
 
-class Cat : public Animal
+class Character : public ICharacter
 {
 private:
-	Brain *brain;
+	std::string name;
+	AMateria* slot[4];
 
 public:
-	Cat();
-	Cat(const Cat& copyCons);
-	Cat& operator = (const Cat& copyCons);
-	~Cat();
+	Character();
+	Character(std::string _name);
+	Character(const Character &copyCons);
+	Character &operator = (const Character &otherCons);
+	~Character();
 
-	void makeSound() const;
-	void setIdea(unsigned int index, const std::string& idea);
-	std::string getIdea(unsigned int index);
+	std::string const & getName() const;
+	void equip(AMateria* m);
+	void unequip(int idx);
+	void use(int idx, ICharacter& target);
 };

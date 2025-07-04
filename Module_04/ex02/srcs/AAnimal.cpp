@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.cpp                                         :+:      :+:    :+:   */
+/*   AAnimal.cpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: shachowd <shachowd@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/25 10:00:34 by shachowd          #+#    #+#             */
-/*   Updated: 2025/06/27 11:55:20 by shachowd         ###   ########.fr       */
+/*   Updated: 2025/07/04 14:51:21 by shachowd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,8 @@
 
 AAnimal::AAnimal() : type("Unknown")
 {
-	std::cout << "AAnimal: Default constructor called." << std::endl;
+	std::cout << "\033[32m" << "AAnimal: Default constructor called.";
+	std::cout << "\033[37m" << std::endl;
 }
 
 AAnimal::AAnimal(const AAnimal& copyCons)
@@ -35,7 +36,8 @@ AAnimal& AAnimal::operator = (const AAnimal& otherCons)
 
 AAnimal::~AAnimal()
 {
-	std::cout << "AAnimal: Destructor called." << std::endl;
+	std::cout << "\033[31m" << "AAnimal: Destructor called." << "\033[37m";
+	std::cout << std::endl;
 }
 
 void AAnimal::makeSound() const

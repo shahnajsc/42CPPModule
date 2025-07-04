@@ -6,7 +6,7 @@
 /*   By: shachowd <shachowd@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/25 10:00:34 by shachowd          #+#    #+#             */
-/*   Updated: 2025/06/26 10:56:12 by shachowd         ###   ########.fr       */
+/*   Updated: 2025/07/04 13:51:03 by shachowd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,8 @@
 
 Animal::Animal() : type("Unknown")
 {
-	std::cout << "Animal: Default constructor called." << std::endl;
+	std::cout << "\033[32m" << "Animal: Default constructor called.";
+	std::cout << "\033[37m" << std::endl;
 }
 
 Animal::Animal(const Animal& copyCons)
@@ -35,7 +36,8 @@ Animal& Animal::operator = (const Animal& otherCons)
 
 Animal::~Animal()
 {
-	std::cout << "Animal: Destructor called." << std::endl;
+	std::cout << "\033[31m" << "Animal: Destructor called." << "\033[37m";
+	std::cout << std::endl;
 }
 
 void Animal::makeSound() const

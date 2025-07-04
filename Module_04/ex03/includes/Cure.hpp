@@ -1,33 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.hpp                                            :+:      :+:    :+:   */
+/*   Cure.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: shachowd <shachowd@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/06/25 09:59:41 by shachowd          #+#    #+#             */
-/*   Updated: 2025/07/04 14:26:03 by shachowd         ###   ########.fr       */
+/*   Created: 2025/07/04 15:32:07 by shachowd          #+#    #+#             */
+/*   Updated: 2025/07/04 16:00:17 by shachowd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 
-#include <iostream>
-#include "../includes/Animal.hpp"
-#include "../includes/Brain.hpp"
+#include "AMateria.hpp"
 
-class Cat : public Animal
+class Cure : public AMateria
 {
-private:
-	Brain *brain;
-
 public:
-	Cat();
-	Cat(const Cat& copyCons);
-	Cat& operator = (const Cat& copyCons);
-	~Cat();
+	Cure();
+	Cure(const Cure &copyCons);
+	Cure &operator = (const Cure &otherCons);
+	~Cure();
 
-	void makeSound() const;
-	void setIdea(unsigned int index, const std::string& idea);
-	std::string getIdea(unsigned int index);
+	AMateria* clone() const override;
+	void use(ICharacter& target) override;
 };

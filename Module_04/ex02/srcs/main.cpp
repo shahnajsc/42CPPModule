@@ -6,11 +6,11 @@
 /*   By: shachowd <shachowd@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/04 11:47:49 by shachowd          #+#    #+#             */
-/*   Updated: 2025/06/27 11:59:30 by shachowd         ###   ########.fr       */
+/*   Updated: 2025/07/04 15:04:13 by shachowd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/Animal.hpp"
+#include "../includes/AAnimal.hpp"
 #include "../includes/Cat.hpp"
 #include "../includes/Dog.hpp"
 #include "../includes/Brain.hpp"
@@ -25,13 +25,14 @@ int main( void )
 	default_test();
 	animal_array_test();
 	deep_copy_test();
+	std::cout << std::endl;
 
 	return 0;
 }
 
 void default_test()
 {
-	std::cout << std::endl << "\033[32m" << "		| DEFAULT TEST |		";
+	std::cout << std::endl << "\033[35m" << "	__| DEFAULT TEST |__		";
 	std::cout << "\033[37m"  << std::endl;
 
 	const AAnimal* j = new Dog();
@@ -42,7 +43,7 @@ void default_test()
 
 void animal_array_test()
 {
-	std::cout << std::endl << "\033[32m" << "		| ANIMAL ARRAY TEST |		";
+	std::cout << std::endl << "\033[35m" << "	__| ANIMAL ARRAY TEST |__		";
 	std::cout << "\033[37m"  << std::endl;
 
 	std::cout << std::endl;
@@ -72,7 +73,7 @@ void animal_array_test()
 
 void deep_copy_test()
 {
-	std::cout << std::endl << "\033[32m" << "		| DEEP COPY TEST |		";
+	std::cout << std::endl << "\033[35m" << "	__| DEEP COPY TEST |__		";
 	std::cout << "\033[37m"  << std::endl;
 
 	Dog dog1;

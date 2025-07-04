@@ -1,33 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.hpp                                            :+:      :+:    :+:   */
+/*   MateriaSource.hpp                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: shachowd <shachowd@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/06/25 09:59:41 by shachowd          #+#    #+#             */
-/*   Updated: 2025/07/04 14:26:03 by shachowd         ###   ########.fr       */
+/*   Created: 2025/07/04 15:36:00 by shachowd          #+#    #+#             */
+/*   Updated: 2025/07/04 16:43:36 by shachowd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 
-#include <iostream>
-#include "../includes/Animal.hpp"
-#include "../includes/Brain.hpp"
+#include <string>
+#include "AMateria.hpp"
+#include "IMateriaSource.hpp"
 
-class Cat : public Animal
+class MateriaSource : public IMateriaSource
 {
 private:
-	Brain *brain;
+	AMateria* catalogue[4];
 
 public:
-	Cat();
-	Cat(const Cat& copyCons);
-	Cat& operator = (const Cat& copyCons);
-	~Cat();
+	MateriaSource();
+	MateriaSource(const MateriaSource &copyCons);
+	MateriaSource &operator = (const MateriaSource &otherCons);
+	~MateriaSource();
 
-	void makeSound() const;
-	void setIdea(unsigned int index, const std::string& idea);
-	std::string getIdea(unsigned int index);
+	void learnMateria(AMateria *m) override;
+	AMateria* createMateria(std::string const & type) override;
 };

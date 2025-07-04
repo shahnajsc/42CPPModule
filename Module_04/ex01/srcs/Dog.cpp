@@ -6,7 +6,7 @@
 /*   By: shachowd <shachowd@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/25 10:45:49 by shachowd          #+#    #+#             */
-/*   Updated: 2025/06/27 11:45:24 by shachowd         ###   ########.fr       */
+/*   Updated: 2025/07/04 14:24:11 by shachowd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,8 @@
 Dog::Dog(): Animal(), brain(new Brain())
 {
 	this->type = "Dog";
-	std::cout << "Dog: Default constructor called." << std::endl;
+	std::cout << "\033[32m" << "Dog: Default constructor called." << "\033[37m";
+	std::cout << std::endl;
 }
 
 Dog::Dog(const Dog &copyCons) : Animal(copyCons), brain(new Brain(*copyCons.brain))
@@ -26,21 +27,20 @@ Dog::Dog(const Dog &copyCons) : Animal(copyCons), brain(new Brain(*copyCons.brai
 Dog &Dog::operator=(const Dog &otherCons)
 {
 	std::cout << "Dog: Copy assignment operator called." << std::endl;
-if (this != &otherCons)
+	if (this != &otherCons)
 	{
 		Animal::operator=(otherCons);
+		Brain* newBrain = otherCons.brain ? new Brain(*otherCons.brain) : nullptr;
 		delete this->brain;
-		if (otherCons.brain != nullptr)
-			this->brain = new Brain(*otherCons.brain);
-		else
-			this->brain = nullptr;
+		this->brain = newBrain;
 	}
 	return (*this);
 }
 
 Dog::~Dog()
 {
-	std::cout << "Dog: Destructor called." << std::endl;
+	std::cout << "\033[31m" << "Dog: Destructor called." << "\033[37m";
+	std::cout << std::endl;
 	delete this->brain;
 }
 
@@ -51,10 +51,10 @@ void	Dog::makeSound(void) const
 
 void Dog::setIdea(unsigned int index, const std::string& _idea)
 {
-	brain->setIdea(index, _idea);
+	this->brain->setIdea(index, _idea);
 }
 
 std::string Dog::getIdea(unsigned int index)
 {
-	return(brain->getIdea(index));
+	return(this->brain->getIdea(index));
 }

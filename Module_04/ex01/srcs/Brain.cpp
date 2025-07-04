@@ -6,7 +6,7 @@
 /*   By: shachowd <shachowd@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/26 12:33:27 by shachowd          #+#    #+#             */
-/*   Updated: 2025/06/27 11:44:17 by shachowd         ###   ########.fr       */
+/*   Updated: 2025/07/04 13:56:55 by shachowd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,8 @@
 
 Brain::Brain()
 {
-	std::cout << "Brain: Default constructor called." << std::endl;
+	std::cout << "\033[32m" << "Brain: Default constructor called.";
+	std::cout << "\033[37m" << std::endl;
 	for (int i = 0; i < 100; i++)
 	{
 		this->ideas[i] = "Idea: " + std::to_string(i + 1);
@@ -45,7 +46,8 @@ Brain &Brain::operator = (const Brain& otherCons)
 
 Brain::~Brain()
 {
-	std::cout << "Brain: Destructor called." << std::endl;
+	std::cout << "\033[31m" << "Brain: Destructor called." << "\033[37m";
+	std::cout << std::endl;
 }
 
 void Brain::setIdea(unsigned int index, const std::string& idea)

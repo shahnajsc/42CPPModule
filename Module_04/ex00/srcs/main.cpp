@@ -6,7 +6,7 @@
 /*   By: shachowd <shachowd@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/04 11:47:49 by shachowd          #+#    #+#             */
-/*   Updated: 2025/06/26 12:01:22 by shachowd         ###   ########.fr       */
+/*   Updated: 2025/07/04 11:32:51 by shachowd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,13 +26,13 @@ int main( void )
 	default_test();
 	extra_test1();
 	extra_test2();
-
+	std::cout << std::endl;
 	return 0;
 }
 
 void default_test()
 {
-	std::cout << std::endl << "\033[32m" << "		| DEFAULT TEST |		";
+	std::cout << std::endl << "\033[35m" << "	___| DEFAULT TEST |___		";
 	std::cout << "\033[37m"  << std::endl;
 
 	const Animal* meta = new Animal();
@@ -40,7 +40,7 @@ void default_test()
 	const Animal* i = new Cat();
 	std::cout << j->getType() << " " << std::endl;
 	std::cout << i->getType() << " " << std::endl;
-	i->makeSound(); //will output the cat sound!
+	i->makeSound();
 	j->makeSound();
 	meta->makeSound();
 	std::cout << std::endl;
@@ -48,11 +48,12 @@ void default_test()
 	delete meta;
 	delete j;
 	delete i;
+	std::cout << "_______________________________________________" << std::endl;
 }
 
 void extra_test1()
 {
-	std::cout << std::endl << "\033[32m" << "		| EXTRA TEST 1 |		";
+	std::cout << std::endl << "\033[35m" << "	___| EXTRA TEST 1 |___		";
 	std::cout << "\033[37m"  << std::endl;
 
 	const WrongAnimal* animal1 = new WrongAnimal();
@@ -69,15 +70,14 @@ void extra_test1()
 	delete animal1;
 	delete animalCat;
 	delete animalDog;
+	std::cout << "_______________________________________________" << std::endl;
 }
 
 void extra_test2()
 {
-	std::cout << std::endl << "\033[32m" << "		| EXTRA TEST 2 |		";
+	std::cout << std::endl << "\033[35m" << "	___| EXTRA TEST 2 |___		";
 	std::cout << "\033[37m"  << std::endl;
 
-	WrongCat cat;
-	WrongDog dog;
 	std::cout << std::endl;
 	const WrongAnimal* animals[3];
 
@@ -93,17 +93,24 @@ void extra_test2()
 	for (int i = 0; i < 3; i++)
 	{
 		std::cout << std::endl;
-		std::cout << "		| Animal Type: " << animals[i]->getType() << " |";
-		std::cout << std::endl;
 		animals[i]->makeSound();
 	}
-	std::cout << std::endl;
-	cat.makeSound();
-	dog.makeSound();
+
 	std::cout << std::endl;
 	for (int i = 0; i < 3; ++i)
 	{
 		delete animals[i];
 	}
+	std::cout << std::endl;
+	std::cout << "_______________________________________________" << std::endl;
+
+	std::cout << std::endl;
+
+	WrongCat cat;
+	WrongDog dog;
+	std::cout << std::endl;
+	cat.makeSound();
+	dog.makeSound();
+
 	std::cout << std::endl;
 }

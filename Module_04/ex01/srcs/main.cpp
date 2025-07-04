@@ -6,7 +6,7 @@
 /*   By: shachowd <shachowd@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/04 11:47:49 by shachowd          #+#    #+#             */
-/*   Updated: 2025/06/27 10:38:56 by shachowd         ###   ########.fr       */
+/*   Updated: 2025/07/04 14:23:08 by shachowd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,13 +25,14 @@ int main( void )
 	default_test();
 	animal_array_test();
 	deep_copy_test();
+	std::cout << std::endl;
 
 	return 0;
 }
 
 void default_test()
 {
-	std::cout << std::endl << "\033[32m" << "		| DEFAULT TEST |		";
+	std::cout << std::endl << "\033[35m" << "	__| DEFAULT TEST |__		";
 	std::cout << "\033[37m"  << std::endl;
 
 	const Animal* j = new Dog();
@@ -42,7 +43,7 @@ void default_test()
 
 void animal_array_test()
 {
-	std::cout << std::endl << "\033[32m" << "		| ANIMAL ARRAY TEST |		";
+	std::cout << std::endl << "\033[35m" << "	__| ANIMAL ARRAY TEST |__		";
 	std::cout << "\033[37m"  << std::endl;
 
 	std::cout << std::endl;
@@ -51,9 +52,9 @@ void animal_array_test()
 	for (int i = 0; i < 6; i++)
 	{
 		if (i < 6/2)
-			animals[i] = new Cat();
-		else
 			animals[i] = new Dog();
+		else
+			animals[i] = new Cat();
 	}
 	for (int i = 0; i < 6; i++)
 	{
@@ -72,7 +73,7 @@ void animal_array_test()
 
 void deep_copy_test()
 {
-	std::cout << std::endl << "\033[32m" << "		| DEEP COPY TEST |		";
+	std::cout << std::endl << "\033[35m" << "	__| DEEP COPY TEST |__		";
 	std::cout << "\033[37m"  << std::endl;
 
 	Dog dog1;

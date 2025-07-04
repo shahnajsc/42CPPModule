@@ -6,7 +6,7 @@
 /*   By: shachowd <shachowd@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/25 10:41:00 by shachowd          #+#    #+#             */
-/*   Updated: 2025/06/27 11:55:51 by shachowd         ###   ########.fr       */
+/*   Updated: 2025/07/04 15:02:31 by shachowd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,8 @@
 Cat::Cat() : AAnimal(), brain(new Brain())
 {
 	this->type = "Cat";
-	std::cout << "Cat: Default constructor called." << std::endl;
+	std::cout << "\033[32m" << "Cat: Default constructor called.";
+	std::cout << "\033[37m" << std::endl;
 
 }
 
@@ -30,18 +31,17 @@ Cat &Cat::operator=(const Cat &otherCons)
 	if (this != &otherCons)
 	{
 		AAnimal::operator=(otherCons);
+		Brain* newBrain = otherCons.brain ? new Brain(*otherCons.brain) : nullptr;
 		delete this->brain;
-		if (otherCons.brain != nullptr)
-			this->brain = new Brain(*otherCons.brain);
-		else
-			this->brain = nullptr;
+		this->brain = newBrain;
 	}
 	return (*this);
 }
 
 Cat::~Cat()
 {
-	std::cout << "Cat: Destructor called." << std::endl;
+	std::cout << "\033[31m" << "Cat: Destructor called." << "\033[37m";
+	std::cout << std::endl;
 	delete this->brain;
 }
 
@@ -52,10 +52,10 @@ void	Cat::makeSound(void) const
 
 void Cat::setIdea(unsigned int index, const std::string& idea)
 {
-	brain->setIdea(index, idea);
+	this->brain->setIdea(index, idea);
 }
 
 std::string Cat::getIdea(unsigned int index)
 {
-	return (brain->getIdea(index));
+	return (this->brain->getIdea(index));
 }

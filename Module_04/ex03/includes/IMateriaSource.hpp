@@ -1,33 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.hpp                                            :+:      :+:    :+:   */
+/*   IMateriaSource.hpp                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: shachowd <shachowd@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/06/25 09:59:41 by shachowd          #+#    #+#             */
-/*   Updated: 2025/07/04 14:26:03 by shachowd         ###   ########.fr       */
+/*   Created: 2025/07/04 15:33:10 by shachowd          #+#    #+#             */
+/*   Updated: 2025/07/04 16:03:15 by shachowd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 
-#include <iostream>
-#include "../includes/Animal.hpp"
-#include "../includes/Brain.hpp"
+#include <string>
+#include "AMateria.hpp"
 
-class Cat : public Animal
+class IMateriaSource
 {
-private:
-	Brain *brain;
-
 public:
-	Cat();
-	Cat(const Cat& copyCons);
-	Cat& operator = (const Cat& copyCons);
-	~Cat();
-
-	void makeSound() const;
-	void setIdea(unsigned int index, const std::string& idea);
-	std::string getIdea(unsigned int index);
+	virtual ~IMateriaSource() {};
+	virtual void learnMateria(AMateria*) = 0;
+	virtual AMateria* createMateria(std::string const & type) = 0;
 };
+

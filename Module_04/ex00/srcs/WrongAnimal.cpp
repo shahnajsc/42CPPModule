@@ -6,7 +6,7 @@
 /*   By: shachowd <shachowd@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/25 14:13:32 by shachowd          #+#    #+#             */
-/*   Updated: 2025/06/26 11:39:47 by shachowd         ###   ########.fr       */
+/*   Updated: 2025/07/04 11:04:04 by shachowd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,8 @@
 
 WrongAnimal::WrongAnimal() : type("WrongAnimal")
 {
-	std::cout << "WrongAnimal: Default constructor called." << std::endl;
+	std::cout << "\033[32m" << "WrongAnimal: Default constructor called.";
+	std::cout << "\033[37m" << std::endl;
 }
 
 WrongAnimal::WrongAnimal(const WrongAnimal& copyCons)
@@ -35,14 +36,15 @@ WrongAnimal& WrongAnimal::operator = (const WrongAnimal& otherCons)
 
 WrongAnimal::~WrongAnimal()
 {
-	std::cout << "WrongAnimal: Destructor called." << std::endl;
+	std::cout << "\033[31m" << "WrongAnimal: Destructor called." << "\033[37m";
+	std::cout << std::endl;
 }
 
 void WrongAnimal::makeSound() const
 {
-	std::cout << "WrongAnimal sounds: Grrrrr... Grr... Grrrr ";
-	std::cout << std::endl;
+	std::cout << "WrongAnimal sounds: Grrrrr... Grr... Grrrr " << std::endl;
 }
+
 std::string WrongAnimal::getType() const
 {
 	return (this->type);

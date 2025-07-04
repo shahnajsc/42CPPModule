@@ -6,7 +6,7 @@
 /*   By: shachowd <shachowd@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/26 12:33:32 by shachowd          #+#    #+#             */
-/*   Updated: 2025/06/27 11:44:29 by shachowd         ###   ########.fr       */
+/*   Updated: 2025/07/04 14:43:28 by shachowd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ public:
 	Brain();
 	Brain(const Brain& copyCons);
 	Brain& operator = (const Brain& otherCons);
-	virtual ~Brain();
+	~Brain();
 
 	void setIdea(unsigned int index, const std::string& idea);
 	std::string getIdea(unsigned int index);

@@ -6,7 +6,7 @@
 /*   By: shachowd <shachowd@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/25 14:13:37 by shachowd          #+#    #+#             */
-/*   Updated: 2025/06/26 12:02:10 by shachowd         ###   ########.fr       */
+/*   Updated: 2025/07/04 11:11:05 by shachowd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,31 +15,32 @@
 WrongCat::WrongCat() : WrongAnimal()
 {
 	this->type = "WrongCat";
-	std::cout << "WrongCat: Default constructor called." << std::endl;
-
+	std::cout << "\033[32m" << "WrongCat: Default constructor called.";
+	std::cout << "\033[37m" << std::endl;
 }
 
-WrongCat::WrongCat(const WrongCat &other): WrongAnimal()
+WrongCat::WrongCat(const WrongCat &copyCons): WrongAnimal(copyCons)
 {
-	this->type = other.type;
 	std::cout << "WrongCat: Copy constructor called." << std::endl;
 }
 
-WrongCat &WrongCat::operator=(const WrongCat &other)
+WrongCat &WrongCat::operator=(const WrongCat &otherCons)
 {
-	if (this != &other) {
-		this->type = other.type;
-	}
 	std::cout << "WrongCat: Copy assignment operator called." << std::endl;
+	if (this != &otherCons)
+	{
+		WrongAnimal::operator= (otherCons);
+	}
 	return (*this);
 }
 
 WrongCat::~WrongCat()
 {
-	std::cout << "WrongCat: Destructor called." << std::endl;
+	std::cout << "\033[31m" << "WrongCat: Destructor called." << "\033[37m";
+	std::cout << std::endl;
 }
 
 void	WrongCat::makeSound(void) const
 {
-	std::cout << "WrongDog Sounds: Meowww.... Meowwwwww... Meeeee" << std::endl;
+	std::cout << "WrongCat Sounds: Meowww.... Meowwwwww... Meeeee" << std::endl;
 }
