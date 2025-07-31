@@ -6,7 +6,7 @@
 /*   By: shachowd <shachowd@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/30 15:26:46 by shachowd          #+#    #+#             */
-/*   Updated: 2025/07/30 17:09:10 by shachowd         ###   ########.fr       */
+/*   Updated: 2025/07/31 10:46:26 by shachowd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,18 +15,17 @@
 void test_Common();
 void test_HighGrade();
 void test_LowGrade();
-void test_DMemory();
 
 int main()
 {
 	std::cout << "_______________________________________________" << std::endl;
 	test_Common();
+
 	std::cout << "_______________________________________________" << std::endl;
 	test_HighGrade();
+
 	std::cout << "_______________________________________________" << std::endl;
 	test_LowGrade();
-	std::cout << "_______________________________________________" << std::endl;
-	test_DMemory();
 }
 
 void test_Common()
@@ -47,6 +46,12 @@ void test_Common()
 		std::cout << "Decrementing(1) Tom's Grade" << std::endl;
 		tom.decrementGrade();
 		std::cout << tom;
+
+		std::cout << std::endl << "Testing copy" << std::endl;
+		Bureaucrat unnamed;
+		std::cout << unnamed;
+		unnamed = tom;
+		std::cout << unnamed;
 	}
 	catch(const std::exception& e)
 	{
@@ -120,31 +125,6 @@ void test_HighGrade()
 	{
 		Bureaucrat high("Tom", 0);
 		std::cout << high;
-	}
-	catch(const std::exception& e)
-	{
-		std::cerr << "Exception: " << e.what() << std::endl;
-	}
-
-	std::cout << "_______________________________________________" << std::endl;
-}
-
-void test_DMemory()
-{
-	std::cout << std::endl << "\033[35m" << "	___| DMemory TEST |___		";
-	std::cout << "\033[37m"  << std::endl << std::endl;
-
-	try
-	{
-		Bureaucrat *dm = new Bureaucrat("Jack", 2);
-		std::cout << *dm;
-		std::cout << "Incrementing(1) Jack's Grade" << std::endl;
-		dm->incrementGrade();
-		std::cout << *dm;
-		// std::cout << "Incrementing(2) Jack's Grade" << std::endl;
-		// dm->incrementGrade();
-		// std::cout << *dm;
-		delete dm;
 	}
 	catch(const std::exception& e)
 	{

@@ -1,4 +1,4 @@
-NAME		= interface
+NAME		= execution
 CC			= c++
 CFLAGS		= -Wall -Wextra -Werror -std=c++11
 
@@ -6,11 +6,13 @@ INCLUDE		= -I./includes
 OBJ_DIR		= ./objects
 HDRS_DIR    = ./includes
 SRCS_DIR 	= ./srcs
-HDRS_FILES	= Bureaucrat.hpp
-SRCS_FILES 	= main.cpp Animal.cpp Cat.cpp Dog.cpp Brain.cpp
+HDRS_FILES	= Bureaucrat.hpp AForm.hpp ShrubberyCreationForm.hpp \
+				RobotomyRequestForm.hpp PresidentialPardonForm.hpp
+SRCS_FILES 	= main.cpp Bureaucrat.cpp AForm.cpp ShrubberyCreationForm.cpp \
+				RobotomyRequestForm.cpp PresidentialPardonForm.cpp
 
-HDRS		= $(addprefix ($(HDRS_DIR))/, $(HDRS_FILES))
-SRCS		= $(addprefix ($(SRCS_DIR))/, $(SRCS_FILES))
+HDRS		= $(addprefix $(HDRS_DIR)/, $(HDRS_FILES))
+SRCS		= $(addprefix $(SRCS_DIR)/, $(SRCS_FILES))
 OBJS		= $(addprefix $(OBJ_DIR)/,  $(SRCS_FILES:.cpp=.o))
 
 RM			= rm -rf

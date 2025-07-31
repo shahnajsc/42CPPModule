@@ -6,13 +6,15 @@
 /*   By: shachowd <shachowd@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/30 11:32:28 by shachowd          #+#    #+#             */
-/*   Updated: 2025/07/31 13:20:06 by shachowd         ###   ########.fr       */
+/*   Updated: 2025/07/31 15:11:56 by shachowd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 
 #include <iostream>
+
+class AForm;
 
 class Bureaucrat
 {
@@ -43,6 +45,8 @@ public:
 	public:
 		const char* what() const throw();
 	};
+
+	void signForm(AForm &form);
 };
 
 std::ostream& operator << (std::ostream &out, const Bureaucrat &source);
