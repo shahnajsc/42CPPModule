@@ -6,7 +6,7 @@
 /*   By: shachowd <shachowd@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/30 11:32:28 by shachowd          #+#    #+#             */
-/*   Updated: 2025/07/31 13:20:06 by shachowd         ###   ########.fr       */
+/*   Updated: 2025/08/05 17:05:26 by shachowd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,12 +22,12 @@ private:
 
 public:
 	Bureaucrat();
-	Bureaucrat(const std::string _name, int _grade);
+	Bureaucrat(const std::string _name, unsigned int _grade);
 	Bureaucrat(const Bureaucrat& copyCons);
 	Bureaucrat& operator = (const Bureaucrat& otherCons);
 	~Bureaucrat();
 
-	std::string getName() const;
+	const std::string getName() const; // const?
 	unsigned int getGrade() const;
 	void incrementGrade();
 	void decrementGrade();

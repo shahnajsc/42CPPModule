@@ -6,7 +6,7 @@
 /*   By: shachowd <shachowd@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/30 12:00:32 by shachowd          #+#    #+#             */
-/*   Updated: 2025/07/31 14:55:37 by shachowd         ###   ########.fr       */
+/*   Updated: 2025/08/05 17:08:56 by shachowd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ Bureaucrat::~Bureaucrat()
 	std::cout << "\033[37m" << std::endl;
 }
 
-std::string Bureaucrat::getName() const
+const std::string Bureaucrat::getName() const
 {
 	return (this->name);
 }

@@ -6,7 +6,7 @@
 /*   By: shachowd <shachowd@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/30 12:00:32 by shachowd          #+#    #+#             */
-/*   Updated: 2025/07/31 10:45:00 by shachowd         ###   ########.fr       */
+/*   Updated: 2025/08/05 17:07:35 by shachowd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,8 @@ Bureaucrat::Bureaucrat(): name("Unnamed"), grade(150)
 	std::cout << "\033[37m" << std::endl;
 }
 
-Bureaucrat::Bureaucrat(const std::string _name, int _grade): name(_name),
-															 grade(_grade)
+Bureaucrat::Bureaucrat(const std::string _name, unsigned int _grade)
+: name(_name), grade(_grade)
 {
 	if (_grade < 1)
 		throw GradeTooHighException();
@@ -29,8 +29,8 @@ Bureaucrat::Bureaucrat(const std::string _name, int _grade): name(_name),
 	std::cout << "\033[37m" << std::endl;
 }
 
-Bureaucrat::Bureaucrat(const Bureaucrat& copyCons): name(copyCons.name),
-													grade(copyCons.grade)
+Bureaucrat::Bureaucrat(const Bureaucrat& copyCons)
+: name(copyCons.name), grade(copyCons.grade)
 {
 	std::cout << "Copy constructor called." << std::endl;
 }
@@ -51,7 +51,7 @@ Bureaucrat::~Bureaucrat()
 	std::cout << "\033[37m" << std::endl;
 }
 
-std::string Bureaucrat::getName() const
+const std::string Bureaucrat::getName() const
 {
 	return (this->name);
 }
@@ -87,7 +87,7 @@ const char* Bureaucrat::GradeTooLowException::what() const throw()
 
 std::ostream& operator << (std::ostream &out, const Bureaucrat &source)
 {
-	out << source.getName() << ", bureaucrat grade " << source.getGrade() << "." << std::endl;
+	out << source.getName() << ", bureaucrat grade " << source.getGrade() << ".";
 
 	return (out);
 }

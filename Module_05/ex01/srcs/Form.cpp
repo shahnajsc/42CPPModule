@@ -6,7 +6,7 @@
 /*   By: shachowd <shachowd@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/31 11:25:37 by shachowd          #+#    #+#             */
-/*   Updated: 2025/07/31 14:59:32 by shachowd         ###   ########.fr       */
+/*   Updated: 2025/08/05 17:10:22 by shachowd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 #include "../includes/Bureaucrat.hpp"
 
 Form::Form(const std::string _name, const unsigned int _signGrade,
-		const unsigned int _execGrade) : name(_name), isSigned(false),
-		signGrade(_signGrade), execGrade(_execGrade)
+			const unsigned int _execGrade)
+: name(_name), isSigned(false), signGrade(_signGrade), execGrade(_execGrade)
 {
 	if (_signGrade < 1 || _execGrade < 1)
 		throw Form::GradeTooHighException();
@@ -26,10 +26,9 @@ Form::Form(const std::string _name, const unsigned int _signGrade,
 	std::cout << "\033[37m" << std::endl;
 }
 
-Form::Form(const Form& copyCons) : name(copyCons.name),
-									isSigned(copyCons.isSigned),
-									signGrade(copyCons.signGrade),
-									execGrade(copyCons.execGrade)
+Form::Form(const Form& copyCons)
+: name(copyCons.name), isSigned(copyCons.isSigned),
+  signGrade(copyCons.signGrade), execGrade(copyCons.execGrade)
 {
 	std::cout << "Form: Copy constructor called." << std::endl;
 }
