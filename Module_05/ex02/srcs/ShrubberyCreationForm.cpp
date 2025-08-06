@@ -6,14 +6,14 @@
 /*   By: shachowd <shachowd@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/31 16:19:51 by shachowd          #+#    #+#             */
-/*   Updated: 2025/08/01 13:02:59 by shachowd         ###   ########.fr       */
+/*   Updated: 2025/08/06 14:50:39 by shachowd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/ShrubberyCreationForm.hpp"
 
 ShrubberyCreationForm::ShrubberyCreationForm()
-: AForm("ShrubberyForm", 145, 137), target("ShrubberyCreation")
+: AForm("ShrubberyForm", 145, 137), target("Home")
 {
 	std::cout << "\033[32m" << this->getName() << " created. Target is: ";
 	std::cout << this->target << "\033[37m" << std::endl;

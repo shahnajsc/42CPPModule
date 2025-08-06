@@ -6,7 +6,7 @@
 /*   By: shachowd <shachowd@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/31 11:25:37 by shachowd          #+#    #+#             */
-/*   Updated: 2025/08/01 14:21:22 by shachowd         ###   ########.fr       */
+/*   Updated: 2025/08/06 16:27:25 by shachowd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,10 +33,9 @@ AForm::AForm(const std::string _name, const unsigned int _signGrade,
 	std::cout << "\033[37m" << std::endl;
 }
 
-AForm::AForm(const AForm& copyCons) : name(copyCons.name),
-									isSigned(copyCons.isSigned),
-									signGrade(copyCons.signGrade),
-									execGrade(copyCons.execGrade)
+AForm::AForm(const AForm& copyCons)
+: name(copyCons.name), isSigned(copyCons.isSigned),
+  signGrade(copyCons.signGrade), execGrade(copyCons.execGrade)
 {
 	std::cout << "Form: Copy constructor called." << std::endl;
 }
@@ -102,22 +101,12 @@ void AForm::beSigned(const Bureaucrat &bureaucrat)
 {
 	if (this->isSigned)
 		throw (FormAlreadySignedException());
-		
+
 	if (bureaucrat.getGrade() <= this->signGrade)
 		this->isSigned = true;
 	else
 		throw AForm::GradeTooLowException();
 }
-
-// void AForm::execute(const Bureaucrat &bureaucrat) const
-// {
-// 	if (!this->isSigned)
-// 		throw FormNotSignedException();
-// 	if (bureaucrat.getGrade() <= this->getExecGrade())
-// 		std::cout << "Form Executed" << std::endl;
-// 	else
-// 		throw AForm::GradeTooLowException();
-// }
 
 void	AForm::checkRequirements(Bureaucrat const & executor) const
 {

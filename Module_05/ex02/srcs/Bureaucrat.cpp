@@ -6,7 +6,7 @@
 /*   By: shachowd <shachowd@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/30 12:00:32 by shachowd          #+#    #+#             */
-/*   Updated: 2025/08/05 17:11:21 by shachowd         ###   ########.fr       */
+/*   Updated: 2025/08/06 15:59:23 by shachowd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,8 @@ Bureaucrat::Bureaucrat(): name("Unnamed"), grade(150)
 	std::cout << "\033[37m" << std::endl;
 }
 
-Bureaucrat::Bureaucrat(const std::string _name, int _grade): name(_name),
-															 grade(_grade)
+Bureaucrat::Bureaucrat(const std::string _name, int _grade)
+: name(_name), grade(_grade)
 {
 	if (_grade < 1)
 		throw GradeTooHighException();
@@ -30,8 +30,8 @@ Bureaucrat::Bureaucrat(const std::string _name, int _grade): name(_name),
 	std::cout << "\033[37m" << std::endl;
 }
 
-Bureaucrat::Bureaucrat(const Bureaucrat& copyCons): name(copyCons.name),
-													grade(copyCons.grade)
+Bureaucrat::Bureaucrat(const Bureaucrat& copyCons)
+: name(copyCons.name), grade(copyCons.grade)
 {
 	std::cout << "Copy constructor called." << std::endl;
 }
@@ -99,6 +99,21 @@ void Bureaucrat::signForm(AForm &form)
 		std::cout << this->name << " couldn't sign the form: " << form.getName();
 		std::cout << ", because " << e.what() << std::endl;
 	}
+}
+
+void Bureaucrat::executeForm(AForm const & form)
+{
+	try
+	{
+		form.execute(*this);
+		std::cout << this->getName() << " executed " << form.getName() << std::endl;
+	}
+	catch(const std::exception& e)
+	{
+		std::cout << this->getName() << " couldn't execute the form: ";
+		std::cout << form.getName() << ", because " << e.what() << std::endl;
+	}
+
 }
 
 std::ostream& operator << (std::ostream &out, const Bureaucrat &source)

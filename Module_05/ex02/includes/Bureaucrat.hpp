@@ -6,7 +6,7 @@
 /*   By: shachowd <shachowd@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/30 11:32:28 by shachowd          #+#    #+#             */
-/*   Updated: 2025/08/05 17:11:09 by shachowd         ###   ########.fr       */
+/*   Updated: 2025/08/06 14:18:47 by shachowd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,7 @@ public:
 	};
 
 	void signForm(AForm &form);
+	void executeForm(AForm const & form);
 };
 
 std::ostream& operator << (std::ostream &out, const Bureaucrat &source);
