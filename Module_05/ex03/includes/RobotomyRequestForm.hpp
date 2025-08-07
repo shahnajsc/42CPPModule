@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   PresidentialPardonForm.hpp                         :+:      :+:    :+:   */
+/*   RobotomyRequestForm.hpp                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: shachowd <shachowd@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/08/07 15:59:32 by shachowd          #+#    #+#             */
-/*   Updated: 2025/08/07 15:59:33 by shachowd         ###   ########.fr       */
+/*   Created: 2025/08/07 16:00:02 by shachowd          #+#    #+#             */
+/*   Updated: 2025/08/07 16:00:03 by shachowd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,17 +15,17 @@
 #include <iostream>
 #include "../includes/AForm.hpp"
 
-class PresidentialPardonForm : public AForm
+class RobotomyRequestForm : public AForm
 {
 private:
 	std::string target;
 
 public:
-	PresidentialPardonForm();
-	PresidentialPardonForm(const std::string _target);
-	PresidentialPardonForm(const PresidentialPardonForm& copyCons);
-	PresidentialPardonForm& operator=(const PresidentialPardonForm& otherCons);
-	~PresidentialPardonForm();
+	RobotomyRequestForm();
+	RobotomyRequestForm(const std::string _target);
+	RobotomyRequestForm(const RobotomyRequestForm& copyCons);
+	RobotomyRequestForm& operator=(const RobotomyRequestForm& otherCons);
+	~RobotomyRequestForm();
 
 	const std::string getTarget() const;
 

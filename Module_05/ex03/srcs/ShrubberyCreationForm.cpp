@@ -6,7 +6,7 @@
 /*   By: shachowd <shachowd@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/31 16:19:51 by shachowd          #+#    #+#             */
-/*   Updated: 2025/08/07 15:48:21 by shachowd         ###   ########.fr       */
+/*   Updated: 2025/08/07 15:55:52 by shachowd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ const std::string	ShrubberyCreationForm::getTarget() const
 	return (this->target);
 }
 
-void	ShrubberyCreationForm::execute(Bureaucrat const &executor) const
+void	ShrubberyCreationForm::execute(Bureaucrat const & executor) const
 {
 	std::cout << "Executing ShrubberyForm......." << std::endl;
 	checkRequirements(executor);

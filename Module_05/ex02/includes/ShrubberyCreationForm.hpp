@@ -6,7 +6,7 @@
 /*   By: shachowd <shachowd@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/31 16:04:59 by shachowd          #+#    #+#             */
-/*   Updated: 2025/08/01 11:46:39 by shachowd         ###   ########.fr       */
+/*   Updated: 2025/08/07 15:48:06 by shachowd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,6 @@
 #include <fstream>
 #include "../includes/AForm.hpp"
 
-// class AForm;
-
 class ShrubberyCreationForm : public AForm
 {
 private:
@@ -25,7 +23,7 @@ private:
 
 public:
 	ShrubberyCreationForm();
-	ShrubberyCreationForm(const std::string _target); //sign 145, exec 137
+	ShrubberyCreationForm(const std::string _target);
 	ShrubberyCreationForm(const ShrubberyCreationForm& copyCons);
 	ShrubberyCreationForm& operator=(const ShrubberyCreationForm& otherCons);
 	~ShrubberyCreationForm();

@@ -6,11 +6,12 @@
 /*   By: shachowd <shachowd@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/30 12:00:32 by shachowd          #+#    #+#             */
-/*   Updated: 2025/08/07 14:40:10 by shachowd         ###   ########.fr       */
+/*   Updated: 2025/08/07 13:15:34 by shachowd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include  "../includes/Bureaucrat.hpp"
+#include "../includes/Bureaucrat.hpp"
+#include "../includes/AForm.hpp"
 
 Bureaucrat::Bureaucrat(): name("Unnamed"), grade(150)
 {
@@ -18,7 +19,7 @@ Bureaucrat::Bureaucrat(): name("Unnamed"), grade(150)
 	std::cout << "\033[37m" << std::endl;
 }
 
-Bureaucrat::Bureaucrat(const std::string _name, unsigned int _grade)
+Bureaucrat::Bureaucrat(const std::string _name, int _grade)
 : name(_name), grade(_grade)
 {
 	if (_grade < 1)
@@ -47,7 +48,7 @@ Bureaucrat& Bureaucrat::operator = (const Bureaucrat& otherCons)
 
 Bureaucrat::~Bureaucrat()
 {
-	std::cout << "\033[31m" << "Bureaucrat: \"" << this->name << "\" destroyed";
+	std::cout << "\033[31m" << "Bureaucrat: \"" << this->name << "\" is destroyed";
 	std::cout << "\033[37m" << std::endl;
 }
 
@@ -83,6 +84,36 @@ const char* Bureaucrat::GradeTooHighException::what() const throw()
 const char* Bureaucrat::GradeTooLowException::what() const throw()
 {
 	return ("Grade is too LOW!");
+}
+
+void Bureaucrat::signForm(AForm &form)
+{
+	try
+	{
+		form.beSigned(*this);
+		std::cout << this->name << " signed the form: " << form.getName();
+		std::cout << std::endl;
+	}
+	catch (std::exception &e)
+	{
+		std::cout << this->name << " couldn't sign the form: " << form.getName();
+		std::cout << ", because " << e.what() << std::endl;
+	}
+}
+
+void Bureaucrat::executeForm(AForm const & form)
+{
+	try
+	{
+		form.execute(*this);
+		std::cout << this->getName() << " executed " << form.getName() << std::endl;
+	}
+	catch(const std::exception& e)
+	{
+		std::cout << this->getName() << " couldn't execute the form: ";
+		std::cout << form.getName() << ", because " << e.what() << std::endl;
+	}
+
 }
 
 std::ostream& operator << (std::ostream &out, const Bureaucrat &source)

@@ -6,7 +6,7 @@
 /*   By: shachowd <shachowd@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/30 12:00:32 by shachowd          #+#    #+#             */
-/*   Updated: 2025/08/06 15:59:23 by shachowd         ###   ########.fr       */
+/*   Updated: 2025/08/07 14:36:09 by shachowd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 Bureaucrat::Bureaucrat(): name("Unnamed"), grade(150)
 {
-	std::cout << "\033[32m" << "Bureaucrat \"" << this->name << "\" is created";
+	std::cout << "\033[32m" << "Bureaucrat: \"" << this->name << "\" is created";
 	std::cout << "\033[37m" << std::endl;
 }
 
@@ -26,19 +26,19 @@ Bureaucrat::Bureaucrat(const std::string _name, int _grade)
 		throw GradeTooHighException();
 	else if (_grade > 150)
 		throw GradeTooLowException();
-	std::cout << "\033[32m" << "Bureaucrat \"" << this->name << "\" is created";
+	std::cout << "\033[32m" << "Bureaucrat: \"" << this->name << "\" is created";
 	std::cout << "\033[37m" << std::endl;
 }
 
 Bureaucrat::Bureaucrat(const Bureaucrat& copyCons)
 : name(copyCons.name), grade(copyCons.grade)
 {
-	std::cout << "Copy constructor called." << std::endl;
+	std::cout << "Bureaucrat: Copy constructor called." << std::endl;
 }
 
 Bureaucrat& Bureaucrat::operator = (const Bureaucrat& otherCons)
 {
-	std::cout << "Copy assignment operator called." << std::endl;
+	std::cout << "Bureaucrat: Copy assignment operator called." << std::endl;
 	if (this != &otherCons)
 	{
 		this->grade = otherCons.grade;
@@ -48,7 +48,7 @@ Bureaucrat& Bureaucrat::operator = (const Bureaucrat& otherCons)
 
 Bureaucrat::~Bureaucrat()
 {
-	std::cout << "\033[31m" << "Bureaucrat \"" << this->name << "\" destroyed";
+	std::cout << "\033[31m" << "Bureaucrat: \"" << this->name << "\" destroyed";
 	std::cout << "\033[37m" << std::endl;
 }
 

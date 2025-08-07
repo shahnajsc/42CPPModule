@@ -1,31 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   PresidentialPardonForm.hpp                         :+:      :+:    :+:   */
+/*   ShrubberyCreationForm.hpp                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: shachowd <shachowd@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/08/07 15:59:32 by shachowd          #+#    #+#             */
-/*   Updated: 2025/08/07 15:59:33 by shachowd         ###   ########.fr       */
+/*   Created: 2025/07/31 16:04:59 by shachowd          #+#    #+#             */
+/*   Updated: 2025/08/07 15:55:04 by shachowd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 
 #include <iostream>
+#include <fstream>
 #include "../includes/AForm.hpp"
 
-class PresidentialPardonForm : public AForm
+class ShrubberyCreationForm : public AForm
 {
 private:
 	std::string target;
 
 public:
-	PresidentialPardonForm();
-	PresidentialPardonForm(const std::string _target);
-	PresidentialPardonForm(const PresidentialPardonForm& copyCons);
-	PresidentialPardonForm& operator=(const PresidentialPardonForm& otherCons);
-	~PresidentialPardonForm();
+	ShrubberyCreationForm();
+	ShrubberyCreationForm(const std::string _target);
+	ShrubberyCreationForm(const ShrubberyCreationForm& copyCons);
+	ShrubberyCreationForm& operator=(const ShrubberyCreationForm& otherCons);
+	~ShrubberyCreationForm();
 
 	const std::string getTarget() const;
 

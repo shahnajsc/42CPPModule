@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: shachowd <shachowd@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/08/07 15:59:00 by shachowd          #+#    #+#             */
-/*   Updated: 2025/08/07 15:59:01 by shachowd         ###   ########.fr       */
+/*   Created: 2025/08/07 15:56:10 by shachowd          #+#    #+#             */
+/*   Updated: 2025/08/07 15:56:11 by shachowd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,14 +16,14 @@
 PresidentialPardonForm::PresidentialPardonForm()
 : AForm("PresidentialPardonForm", 72, 45), target("President")
 {
-	std::cout << "\033[32m" << this->getName() << ": Form created. Target is: ";
+	std::cout << "\033[32m" << this->getName() << " created. Target is: ";
 	std::cout << this->target << "\033[37m" << std::endl;
 }
 
 PresidentialPardonForm::PresidentialPardonForm(const std::string _target)
 : AForm("PresidentialPardonForm", 72, 45), target(_target)
 {
-	std::cout << "\033[32m" << this->getName() << ": Form created. Target is: ";
+	std::cout << "\033[32m" << this->getName() << " created. Target is: ";
 	std::cout << this->target << "\033[37m" << std::endl;
 }
 

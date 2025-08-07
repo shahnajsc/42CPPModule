@@ -6,7 +6,7 @@
 /*   By: shachowd <shachowd@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/31 11:25:37 by shachowd          #+#    #+#             */
-/*   Updated: 2025/08/07 14:48:04 by shachowd         ###   ########.fr       */
+/*   Updated: 2025/08/07 14:48:15 by shachowd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ AForm& AForm::operator= (const AForm& otherCons)
 
 AForm::~AForm()
 {
-	std::cout << "\033[31m" << "AForm: \"" << this->name << "\" destroyed.";
+	std::cout << "\033[31m" << "AForm: Form \"" << this->name << "\" destroyed.";
 	std::cout << "\033[37m" << std::endl;
 }
 

@@ -6,7 +6,7 @@
 /*   By: shachowd <shachowd@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/31 11:25:37 by shachowd          #+#    #+#             */
-/*   Updated: 2025/08/05 17:10:22 by shachowd         ###   ########.fr       */
+/*   Updated: 2025/08/07 14:47:44 by shachowd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ Form::Form(const std::string _name, const unsigned int _signGrade,
 	if (_signGrade > 150 || _execGrade > 150)
 		throw Form::GradeTooLowException();
 
-	std::cout << "\033[32m" << "Form \"" << this->name << "\" is created";
+	std::cout << "\033[32m" << "Form: \"" << this->name << "\" is created";
 	std::cout << "\033[37m" << std::endl;
 }
 
@@ -46,7 +46,7 @@ Form& Form::operator= (const Form& otherCons)
 
 Form::~Form()
 {
-	std::cout << "\033[31m" << "Form \"" << this->name << "\" destroyed.";
+	std::cout << "\033[31m" << "Form: \"" << this->name << "\" destroyed.";
 	std::cout << "\033[37m" << std::endl;
 }
 
@@ -92,14 +92,14 @@ void Form::beSigned(const Bureaucrat &bureaucrat)
 
 std::ostream& operator<< (std::ostream &out, const Form &source)
 {
-	out << "Form Name: " << source.getName() << ", Is Signed? ";
+	out << "Form: Form Name: " << source.getName() << ", Is Signed? ";
 
 	if (source.getIsSigned())
-		out << "\"Yes\" Sign Grade: ";
+		out << "\"Yes\", Sign Grade: ";
 	else
-		out << "\"No\" Sign Grade: ";
+		out << "\"No\", Sign Grade: ";
 
-	out << source.getSignGrade() << " Execution Grade: " << source.getExecGrade();
+	out << source.getSignGrade() << ", Execution Grade: " << source.getExecGrade();
 
 	return (out);
 }
