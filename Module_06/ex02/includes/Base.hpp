@@ -6,7 +6,7 @@
 /*   By: shachowd <shachowd@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/30 11:32:28 by shachowd          #+#    #+#             */
-/*   Updated: 2025/10/23 16:51:14 by shachowd         ###   ########.fr       */
+/*   Updated: 2025/10/23 20:45:57 by shachowd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,7 @@
 
 #include <iostream>
 
-class Base
-{
-
+class Base {
 public:
 	virtual ~Base();
 
