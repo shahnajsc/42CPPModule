@@ -1,4 +1,4 @@
-NAME		= type
+NAME		= realtype
 CC			= c++
 CFLAGS		= -Wall -Wextra -Werror -std=c++11
 
@@ -6,7 +6,7 @@ INCLUDE		= -I./includes
 OBJ_DIR		= ./objects
 HDRS_DIR    = ./includes
 SRCS_DIR 	= ./srcs
-HDRS_FILES	= Base.hpp
+HDRS_FILES	= Base.hpp A.hpp B.hpp C.hpp
 SRCS_FILES 	= main.cpp Base.cpp
 
 HDRS		= $(addprefix $(HDRS_DIR)/, $(HDRS_FILES))
