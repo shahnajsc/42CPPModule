@@ -6,7 +6,7 @@
 /*   By: shachowd <shachowd@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/30 12:00:32 by shachowd          #+#    #+#             */
-/*   Updated: 2025/10/20 17:19:35 by shachowd         ###   ########.fr       */
+/*   Updated: 2025/10/23 22:07:09 by shachowd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,17 @@ bool isDouble(const std::string &inputStr) {
 
 }
 
+void printChar(const std::string &inputStr) {
+	char input = inputStr[0];
+
+	std::cout << "Input is CHAR" << std::endl;
+
+	std::cout << "CHAR: " << input << std::endl;
+	std::cout << "INT: " << static_cast<int>(input) << std::endl;
+	std::cout << "FLOAT: " << static_cast<float>(input) << std::endl;
+	std::cout << "DOUBLE: " << static_cast<double>(input) << std::endl;
+}
+
 Type getType(const std::string &inputStr) {
 
 	if (inputStr.length() == 1 && !isdigit(inputStr[0]))
@@ -56,7 +67,14 @@ Type getType(const std::string &inputStr) {
 
 void ScalarConverter::convert(const std::string &inputStr) {
 
-	// identity the type
-	// print (static cast)
+	Type type = getType(inputStr);
+
+	if (type == CHAR) {
+		printChar(inputStr);
+	}
+	else if (type == INT) {
+		
+	}
+
 
 }
