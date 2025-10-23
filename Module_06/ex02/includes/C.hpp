@@ -6,13 +6,12 @@
 /*   By: shachowd <shachowd@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/23 16:44:18 by shachowd          #+#    #+#             */
-/*   Updated: 2025/10/23 16:44:25 by shachowd         ###   ########.fr       */
+/*   Updated: 2025/10/23 20:46:09 by shachowd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 #include "Base.hpp"
 
-class C: public Base
-{
+class C: public Base {
 };
