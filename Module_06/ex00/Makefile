@@ -40,6 +40,9 @@ re: fclean all
 # color
 RED			= \033[0;31m
 PINK		= \033[0;35m
-RESET		= \033[0;36m
+GREEN		= \033[0;92m
+BLUE		= \033[0;94m
+YELLOW		= \033[0;93m
+RESET		= \033[0m
 
 .PHONY: all clean fclean re
