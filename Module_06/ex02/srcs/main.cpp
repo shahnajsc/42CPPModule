@@ -6,7 +6,7 @@
 /*   By: shachowd <shachowd@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/30 15:26:46 by shachowd          #+#    #+#             */
-/*   Updated: 2025/10/23 21:17:51 by shachowd         ###   ########.fr       */
+/*   Updated: 2025/10/24 11:59:24 by shachowd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,15 +24,15 @@ Base* generate(void) {
 
 	switch (std::rand() % 3) {
 		case 0: {
-			std::cout << "Creating A class object" << std::endl;
+			std::cout << GREEN <<"Creating A class object" << RESET << std::endl;
 			return new A;
 		}
 		case 1: {
-			std::cout << "Creating B class object" << std::endl;
+			std::cout << GREEN  << "Creating B class object" << RESET  << std::endl;
 			return new B;
 		}
 		case 2: {
-			std::cout << "Creating C class object" << std::endl;
+			std::cout << GREEN  << "Creating C class object" << RESET  << std::endl;
 			return new C;
 		}
 	}
@@ -79,6 +79,7 @@ void identify(Base& p) {
 	catch (const std::bad_cast &e) {
 		std::cout << "Error C: " << e.what() << std::endl;
 	}
+	std::cout << std::endl;
 }
 
 class D {
@@ -88,13 +89,13 @@ class D {
 int main(void)
 {
 	std::cout << std::endl << "\033[0;93m" << "_______________TEST__________________";
-	std::cout << "\033[37m" << std::endl << std::endl;
+	std::cout << "\033[0m" << std::endl << std::endl;
 	Base *obj = generate();
 
-	std::cout << std::endl << "#POINTER#" << std::endl;
+	std::cout << std::endl << PINK << "#POINTER#" << RESET << std::endl;
 	identify(obj);
 
-	std::cout << std::endl << "#REFERENCE#" << std::endl;
+	std::cout << std::endl << PINK << "#REFERENCE#" << RESET << std::endl;
 	identify(*obj);
 
 	delete obj;
