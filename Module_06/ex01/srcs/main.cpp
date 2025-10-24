@@ -6,7 +6,7 @@
 /*   By: shachowd <shachowd@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/30 15:26:46 by shachowd          #+#    #+#             */
-/*   Updated: 2025/10/23 21:27:33 by shachowd         ###   ########.fr       */
+/*   Updated: 2025/10/24 12:10:21 by shachowd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,8 @@ int main()
 	Test2();
 
 	//---------------------------------------------------
-	std::cout << std::endl << "\033[0;93m" << "_______________TEST3__________________";
-	std::cout << "\033[37m" << std::endl << std::endl;
+	std::cout << std::endl << YELLOW << "_______________TEST3__________________";
+	std::cout << RESET << std::endl << std::endl;
 	Data test3;
 
 	test3.id 	= 35;
@@ -31,7 +31,7 @@ int main()
 
 	Data *ptrTest3 = &test3;
 
-	std::cout << "\033[0;92m" << "DATA SET:" << "\033[37m" << " ID[" << test3.id << "], NAME:["
+	std::cout << GREEN << "DATA SET:" << RESET << " ID[" << test3.id << "], NAME:["
 		<< test3.name << "], SCORE[" << test3.score << "]" << std::endl << std::endl;
 
 	//---------------------------------------------------
@@ -40,16 +40,16 @@ int main()
 	Data *deserTest3 = Serializer::deserialize(intTest1);
 	//---------------------------------------------------
 
-	std::cout << "Original Address of TEST1 Dataset:	" << "\033[0;92m" << ptrTest3 << "\033[37m" << std::endl;
-	std::cout << "Deserialized Address of TEST1 Dataset:	" << "\033[0;92m" << deserTest3 << "\033[37m" << std::endl;
-	std::cout << "INT value of TEST1 Address:		" << "\033[0;94m" <<intTest1 << "\033[37m" << std::endl;
+	std::cout << "Original Address of TEST1 Dataset:	" << GREEN << ptrTest3 << RESET << std::endl;
+	std::cout << "Deserialized Address of TEST1 Dataset:	" << GREEN << deserTest3 << RESET << std::endl;
+	std::cout << "INT value of TEST1 Address:		" << GREEN <<intTest1 << RESET << std::endl;
 
 	if (ptrTest3 == deserTest3)
-		std::cout << "\033[0;92m" << "Original and converted Address are same" << "\033[37m" << std::endl;
+		std::cout << PINK << "Original and converted Address are same" << RESET << std::endl;
 	else
-		std::cout << "\033[0;31m" << "Original and converted Address are not same" << "\033[37m" << std::endl;
+		std::cout << PINK << "Original and converted Address are not same" << RESET << std::endl;
 
-	std::cout << std::endl << "\033[0;92m" << "DATA SET:" << "\033[37m" << " ID[" << test3.id << "], NAME:["
+	std::cout << std::endl << GREEN << "DATA SET:" << RESET << " ID[" << test3.id << "], NAME:["
 		<< test3.name << "], SCORE[" << test3.score << "]" << std::endl << std::endl;
 	//---------------------------------------------------
 
@@ -61,8 +61,8 @@ int main()
 
 void Test1()
 {
-	std::cout << std::endl << "\033[0;93m" << "_______________TEST1__________________";
-	std::cout << "\033[37m" << std::endl << std::endl;
+	std::cout << std::endl << YELLOW << "_______________TEST1__________________";
+	std::cout << RESET << std::endl << std::endl;
 	Data test1;
 
 	test1.id 	= 11;
@@ -71,7 +71,7 @@ void Test1()
 
 	Data *ptrTest1 = &test1;
 
-	std::cout << "\033[0;92m" << "DATA SET:" << "\033[37m" << " ID[" << test1.id << "], NAME:["
+	std::cout << GREEN << "DATA SET:" << RESET << " ID[" << test1.id << "], NAME:["
 		<< test1.name << "], SCORE[" << test1.score << "]" << std::endl << std::endl;
 
 	//---------------------------------------------------
@@ -80,24 +80,24 @@ void Test1()
 	Data *deserTest1 = Serializer::deserialize(intTest1);
 	//---------------------------------------------------
 
-	std::cout << "Original Address of TEST1 Dataset:	" << "\033[0;92m" << ptrTest1 << "\033[37m" << std::endl;
-	std::cout << "Deserialized Address of TEST1 Dataset:	" << "\033[0;92m" << deserTest1 << "\033[37m" << std::endl;
-	std::cout << "INT value of TEST1 Address:		" << "\033[0;94m" <<intTest1 << "\033[37m" << std::endl;
+	std::cout << "Original Address of TEST1 Dataset:	" << GREEN << ptrTest1 << RESET << std::endl;
+	std::cout << "Deserialized Address of TEST1 Dataset:	" << GREEN << deserTest1 << RESET << std::endl;
+	std::cout << "INT value of TEST1 Address:		" << GREEN <<intTest1 << RESET << std::endl;
 
 	if (ptrTest1 == deserTest1)
-		std::cout << "\033[0;92m" << "Original and converted Address are same" << "\033[37m" << std::endl;
+		std::cout << PINK << "Original and converted Address are same" << RESET << std::endl;
 	else
-		std::cout << "\033[0;31m" << "Original and converted Address are not same" << "\033[37m" << std::endl;
+		std::cout << PINK << "Original and converted Address are not same" << RESET << std::endl;
 
-	std::cout << std::endl << "\033[0;92m" << "DATA SET:" << "\033[37m" << " ID[" << test1.id << "], NAME:["
+	std::cout << std::endl << GREEN << "DATA SET:" << RESET << " ID[" << test1.id << "], NAME:["
 		<< test1.name << "], SCORE[" << test1.score << "]" << std::endl << std::endl;
 }
 
 
 void Test2()
 {
-	std::cout << std::endl << "\033[0;93m" << "_______________TEST2__________________";
-	std::cout << "\033[37m" << std::endl << std::endl;
+	std::cout << std::endl << YELLOW << "_______________TEST2__________________";
+	std::cout << RESET << std::endl << std::endl;
 	Data test2;
 
 	test2.id 	= 33;
@@ -106,7 +106,7 @@ void Test2()
 
 	Data *ptrTest2 = &test2;
 
-	std::cout << "\033[0;92m" << "DATA SET:" << "\033[37m" << " ID[" << test2.id << "], NAME:["
+	std::cout << GREEN << "DATA SET:" << RESET << " ID[" << test2.id << "], NAME:["
 		<< test2.name << "], SCORE[" << test2.score << "]" << std::endl << std::endl;
 
 	//---------------------------------------------------
@@ -115,15 +115,15 @@ void Test2()
 	Data *deserTest2 = Serializer::deserialize(intTest2);
 	//---------------------------------------------------
 
-	std::cout << "Original Address of TEST1 Dataset:	" << "\033[0;92m" << ptrTest2 << "\033[37m" << std::endl;
-	std::cout << "Deserialized Address of TEST1 Dataset:	" << "\033[0;92m" << deserTest2 << "\033[37m" << std::endl;
-	std::cout << "INT value of TEST1 Address:		" << "\033[0;94m" <<intTest2 << "\033[37m" << std::endl;
+	std::cout << "Original Address of TEST1 Dataset:	" << GREEN << ptrTest2 << RESET << std::endl;
+	std::cout << "Deserialized Address of TEST1 Dataset:	" << GREEN << deserTest2 << RESET << std::endl;
+	std::cout << "INT value of TEST1 Address:		" << GREEN <<intTest2 << RESET << std::endl;
 
 	if (ptrTest2 == deserTest2)
-		std::cout << "\033[0;92m" << "Original and converted Address are same" << "\033[37m" << std::endl;
+		std::cout << PINK << "Original and converted Address are same" << RESET << std::endl;
 	else
-		std::cout << "\033[0;31m" << "Original and converted Address are not same" << "\033[37m" << std::endl;
+		std::cout << PINK << "Original and converted Address are not same" << RESET << std::endl;
 
-	std::cout << std::endl << "\033[0;92m" << "DATA SET:" << "\033[37m" << " ID[" << test2.id << "], NAME:["
+	std::cout << std::endl << GREEN << "DATA SET:" << RESET<< " ID[" << test2.id << "], NAME:["
 		<< test2.name << "], SCORE[" << test2.score << "]" << std::endl << std::endl;
 }
