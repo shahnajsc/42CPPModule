@@ -6,7 +6,7 @@
 /*   By: shachowd <shachowd@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/30 15:26:46 by shachowd          #+#    #+#             */
-/*   Updated: 2025/10/24 11:59:24 by shachowd         ###   ########.fr       */
+/*   Updated: 2025/10/27 10:56:58 by shachowd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,6 +52,8 @@ void identify(Base* p) {
 		std::cout << "B" << std::endl;
 	else if (ptrC)
 		std::cout << "C" << std::endl;
+	else
+		std::cout << "Type Unknown" << std::endl;
 }
 
 void identify(Base& p) {
