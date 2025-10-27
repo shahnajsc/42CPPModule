@@ -6,7 +6,7 @@
 /*   By: shachowd <shachowd@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/30 11:32:28 by shachowd          #+#    #+#             */
-/*   Updated: 2025/10/24 12:13:12 by shachowd         ###   ########.fr       */
+/*   Updated: 2025/10/27 16:26:41 by shachowd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,3 +43,19 @@ private:
 public:
 	static void convert(const std::string &inputStr);
 };
+
+Type getType(const std::string &inputStr);
+
+bool isPseudoLiterals(const std::string &inputStr);
+bool isInt(const std::string &inputStr);
+bool isDouble(const std::string &inputStr);
+bool isFloat(const std::string &inputStr);
+
+void printPseudo(const std::string &inputStr);
+void printChar(const std::string &inputStr);
+void printInt(const std::string &inputStr);
+void printCharSpecial(double input);
+void printIntSpecial(double input);
+void printDouble(const std::string &inputStr);
+void printFloat(const std::string &inputStr);
+void printInvalid();
