@@ -6,7 +6,7 @@
 /*   By: shachowd <shachowd@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/07 15:55:59 by shachowd          #+#    #+#             */
-/*   Updated: 2025/08/07 15:56:00 by shachowd         ###   ########.fr       */
+/*   Updated: 2025/10/28 10:08:24 by shachowd         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ RobotomyRequestForm::RobotomyRequestForm(const std::string _target)
 }
 
 RobotomyRequestForm::RobotomyRequestForm(const RobotomyRequestForm &copyCons)
-: AForm("RobotomyRequestForm", 145, 137), target(copyCons.target) {
+: AForm("RobotomyRequestForm", 72, 45), target(copyCons.target) {
 	std::cout << "RobotomytForm: Copy constructor called." << std::endl;
 }
 
