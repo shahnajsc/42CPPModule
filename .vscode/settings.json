@@ -67,7 +67,13 @@
 		"execution": "cpp",
 		"ios": "cpp",
 		"locale": "cpp",
-		"mutex": "cpp"
+		"mutex": "cpp",
+		"__hash_table": "cpp",
+		"__node_handle": "cpp",
+		"__split_buffer": "cpp",
+		"print": "cpp",
+		"queue": "cpp",
+		"stack": "cpp"
 	},
 	"editor.stickyTabStops": true,
 	"editor.tabCompletion": "on"
