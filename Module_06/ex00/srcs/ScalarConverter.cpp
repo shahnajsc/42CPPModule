@@ -15,25 +15,29 @@
 
 void ScalarConverter::convert(const std::string &inputStr) {
 
-	Type type = getType(inputStr);
+	try {
+		Type type = getType(inputStr);
 
-	if (type == CHAR) {
-		printChar(inputStr);
-	}
-	else if (type == PSEUDO) {
-		printPseudo(inputStr);
-	}
-	else if (type == INT) {
-		printInt(inputStr);
-	}
-	else if (type == DOUBLE) {
-		printDouble(inputStr);
-	}
-	else if (type == FLOAT) {
-		printFloat(inputStr);
-	}
-	else if (type == INVALID) {
-		printInvalid();
+		if (type == CHAR) {
+			printChar(inputStr);
+		}
+		else if (type == PSEUDO) {
+			printPseudo(inputStr);
+		}
+		else if (type == INT) {
+			printInt(inputStr);
+		}
+		else if (type == DOUBLE) {
+			printDouble(inputStr);
+		}
+		else if (type == FLOAT) {
+			printFloat(inputStr);
+		}
+		else if (type == INVALID) {
+			printInvalid();
+		}
+	} catch (const std::exception &e) {
+		std::cout << "Not possible: " << e.what() << std::endl;
 	}
 }
 
