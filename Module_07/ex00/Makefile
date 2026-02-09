@@ -1,4 +1,4 @@
-NAME		= template
+NAME		= templates
 CC			= c++
 CFLAGS		= -Wall -Wextra -Werror -std=c++11
 
@@ -6,7 +6,7 @@ INCLUDE		= -I./includes
 OBJ_DIR		= ./objects
 HDRS_DIR    = ./includes
 SRCS_DIR 	= ./srcs
-HDRS_FILES	= whatever.hpp
+HDRS_FILES	= templates.hpp
 SRCS_FILES 	= main.cpp
 
 HDRS		= $(addprefix $(HDRS_DIR)/, $(HDRS_FILES))
