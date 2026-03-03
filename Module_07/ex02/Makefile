@@ -6,7 +6,7 @@ INCLUDE		= -I./includes
 OBJ_DIR		= ./objects
 HDRS_DIR    = ./includes
 SRCS_DIR 	= ./srcs
-HDRS_FILES	= Array.hpp
+HDRS_FILES	= Array.hpp Array.tpp
 SRCS_FILES 	= main.cpp
 
 HDRS		= $(addprefix $(HDRS_DIR)/, $(HDRS_FILES))
